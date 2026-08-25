@@ -1,0 +1,41 @@
+---
+layout: default
+---
+<main id="top">
+  <article class="article outer">
+    <div class="inner">
+      <nav class="breadcrumbs" aria-label="Breadcrumb">
+        <ol class="breadcrumb-list">
+          <li class="breadcrumb-item"><a href="{{ '/' | relative_url }}">Home</a></li>
+          <li aria-hidden="true">/</li>
+          <li class="breadcrumb-item"><a href="{{ '/blog/' | relative_url }}">Blog</a></li>
+          <li aria-hidden="true">/</li>
+          <li class="breadcrumb-item" aria-current="page">{{ page.title }}</li>
+        </ol>
+      </nav>
+
+      <ul class="chip-list"><li class="chip">{{ page.category }}</li></ul>
+      <h1 class="article-title">{{ page.title }}</h1>
+      <p class="article-meta-row">
+        <span>{{ site.author.name }}</span>
+        <span aria-hidden="true">&middot;</span>
+        <span>{{ page.date | date: "%-d %b, %Y" }}</span>
+        <span aria-hidden="true">&middot;</span>
+        <span>{% include reading_time.html content=content %} min read</span>
+      </p>
+      {% if page.excerpt %}<p class="article-excerpt">{{ page.excerpt | strip_html }}</p>{% endif %}
+
+      <div class="article-body">
+        {{ content }}
+      </div>
+
+      <div class="article-share">
+        <span style="font-size:1.35rem;color:var(--secondary-text);font-weight:600;">Share this post</span>
+        <a class="share-btn" href="#" data-share="x">X</a>
+        <a class="share-btn" href="#" data-share="linkedin">LinkedIn</a>
+        <a class="share-btn" href="#" data-share="email">Email</a>
+        <button class="share-btn" type="button" data-share="copy"><span class="share-label">Copy link</span></button>
+      </div>
+    </div>
+  </article>
+</main>

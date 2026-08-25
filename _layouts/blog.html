@@ -1,0 +1,27 @@
+---
+layout: default
+---
+<main id="top">
+  <section class="page-hero outer">
+    <div class="inner">
+      {% if page.eyebrow %}<p class="page-eyebrow">{{ page.eyebrow }}</p>{% endif %}
+      <h1 class="page-title">{{ page.title }}</h1>
+      {% if page.lede %}<p class="page-lede">{{ page.lede }}</p>{% endif %}
+    </div>
+  </section>
+
+  <section class="section outer" style="padding-top:0;">
+    <div class="inner">
+      <div class="post-feed">
+        {% for post in site.posts %}
+        <article class="post-card">
+          <ul class="chip-list"><li class="chip">{{ post.category }}</li></ul>
+          <p class="post-card-meta">{{ post.date | date: "%-d %b, %Y" }} &middot; {% include reading_time.html content=post.content %} min read</p>
+          <h3 class="post-card-title"><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
+          <p class="post-card-excerpt">{{ post.excerpt | strip_html | truncate: 180 }}</p>
+        </article>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+</main>

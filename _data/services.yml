@@ -1,0 +1,34 @@
+- title: Payment & Fintech Engineering
+  desc: >-
+    Gateway integrations (Payrix, Windcave, Square, and more), unified payment
+    middleware, QR and terminal payment flows, and PCI-conscious architecture.
+  tags: [PHP, Laravel, Node.js, AWS]
+  icon: card
+
+- title: Full-Stack SaaS Development
+  desc: >-
+    End-to-end product builds — API design, database architecture, front-end
+    delivery with Vue.js, and deployment pipelines.
+  tags: [Vue.js, Laravel, MySQL, Docker]
+  icon: bolt
+
+- title: Cloud Architecture & AWS Consulting
+  desc: >-
+    Migrating monoliths to containerized, multi-service architecture with an
+    eye on cost, reliability, and deploy safety.
+  tags: [AWS, Docker, System Design]
+  icon: layers
+
+- title: Technical Leadership & Mentoring
+  desc: >-
+    Embedded tech lead support — code review, architecture decisions, release
+    management, and growing engineers on your team.
+  tags: [Agile, Code Review, Team Leadership]
+  icon: users
+
+- title: AI-Assisted Development Setup
+  desc: >-
+    Getting your team productive with LLM tooling — Claude Code, Copilot
+    workflows, and where AI-assisted delivery genuinely helps vs. gets in the way.
+  tags: [Claude Code, GitHub Copilot, LLM]
+  icon: bulb

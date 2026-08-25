@@ -1,0 +1,25 @@
+<footer class="site-footer outer" role="contentinfo">
+  <div class="inner">
+    <div class="footer-contact-row">
+      <a href="mailto:{{ site.author.email }}" class="footer-contact-link">
+        {% include icon.html name="email" %} Email
+      </a>
+      <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Intro+Call+%E2%80%93+Milanda+Wijekoon&details=Thanks+for+reaching+out!+Let%27s+chat+about+your+project+or+role.&add=milandawijekoon%40gmail.com" class="footer-contact-link" target="_blank" rel="noopener">
+        {% include icon.html name="calendar" %} Schedule a Call
+      </a>
+      <a href="{{ site.author.linkedin }}" class="footer-contact-link" target="_blank" rel="noopener">
+        {% include icon.html name="linkedin" %} LinkedIn
+      </a>
+      <a href="https://github.com/milandawijekoon" class="footer-contact-link" target="_blank" rel="noopener">
+        {% include icon.html name="github" %} GitHub
+      </a>
+    </div>
+    <section class="copyright">
+      &copy; 2019&ndash;{{ site.time | date: '%Y' }} {{ site.author.name }}. Colombo, Sri Lanka.
+    </section>
+  </div>
+</footer>
+
+<button id="back-to-top" class="back-to-top" type="button" aria-label="Back to top" hidden>
+  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="19" x2="12" y2="5"/><polyline points="5 12 12 5 19 12"/></svg>
+</button>

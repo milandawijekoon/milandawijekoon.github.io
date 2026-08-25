@@ -1,0 +1,21 @@
+<header class="site-head outer">
+  <div class="inner head-inner">
+    <a class="head-logo" href="{{ '/' | relative_url }}">{{ site.title }}</a>
+    <button class="head-burger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="primary-navigation">
+      <span></span><span></span><span></span>
+    </button>
+    <nav id="primary-navigation" class="head-nav" aria-label="Primary">
+      <ul>
+        {% for item in site.data.nav %}
+        <li>
+          {% if item.url == "/" %}
+            <a href="{{ item.url | relative_url }}"{% if page.url == "/" %} aria-current="page"{% endif %}>{{ item.title }}</a>
+          {% else %}
+            <a href="{{ item.url | relative_url }}"{% if page.url contains item.url %} aria-current="page"{% endif %}>{{ item.title }}</a>
+          {% endif %}
+        </li>
+        {% endfor %}
+      </ul>
+    </nav>
+  </div>
+</header>

@@ -1,0 +1,45 @@
+title: Milanda Wijekoon
+tagline: Associate Technical Lead
+description: >-
+  Milanda Wijekoon — Associate Technical Lead building scalable SaaS and
+  fintech platforms with PHP/Laravel, Vue.js, Node.js and AWS.
+url: "https://milandawijekoon.dev"
+baseurl: ""
+
+author:
+  name: Milanda Wijekoon
+  email: milandawijekoon@gmail.com
+  linkedin: https://linkedin.com/in/milandawijekoon
+  phone: "+94 76 997 4832"
+
+markdown: kramdown
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+
+permalink: /blog/:title/
+
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+
+feed:
+  path: feed.xml
+
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post
+  - scope:
+      path: ""
+    values:
+      layout: page
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - vendor
+  - node_modules

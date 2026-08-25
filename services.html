@@ -1,0 +1,57 @@
+---
+layout: default
+title: Services
+permalink: /services/
+eyebrow: Services
+lede: >-
+  From payment infrastructure to full-stack delivery, I work as an embedded
+  engineer or technical lead — hands-on with code, architecture, and the
+  decisions in between.
+description: >-
+  Payment engineering, full-stack SaaS development, cloud architecture, and
+  technical leadership services from Milanda Wijekoon.
+---
+<main id="top">
+  <section class="page-hero outer">
+    <div class="inner">
+      <p class="page-eyebrow">{{ page.eyebrow }}</p>
+      <h1 class="page-title">A team, one engineer at a time.</h1>
+      <p class="page-lede">{{ page.lede }}</p>
+    </div>
+  </section>
+
+  <section class="section outer" style="padding-top:0;">
+    <div class="inner">
+      <div class="service-grid">
+        {% for service in site.data.services %}
+        <div class="service-card">
+          <span class="service-icon">{% include icon.html name=service.icon %}</span>
+          <div>
+            <h3 class="service-title">{{ service.title }}</h3>
+            <p class="service-desc">{{ service.desc }}</p>
+            <div class="service-tags">
+              {% for tag in service.tags %}<span class="service-tag">{{ tag }}</span>{% endfor %}
+            </div>
+          </div>
+          <a class="service-cta" href="{{ '/contact/' | relative_url }}">Enquire &rarr;</a>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+
+  <section class="section outer" style="padding-top:0;">
+    <div class="inner">
+      <div class="section-head"><h2 class="section-title">How We&rsquo;d Work Together</h2></div>
+      <div class="process-list">
+        {% for step in site.data.process %}
+        <div class="process-item">
+          <h3>{{ step.title }}</h3>
+          <p>{{ step.desc }}</p>
+        </div>
+        {% endfor %}
+      </div>
+      <p style="margin-top:36px;"><a class="btn btn-primary" href="{{ '/contact/' | relative_url }}">Start a Project &rarr;</a></p>
+    </div>
+  </section>
+</main>
