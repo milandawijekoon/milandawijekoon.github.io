@@ -81,6 +81,40 @@
     }
   });
 
+  // Code blocks: language label + copy button
+  document.querySelectorAll('.article-body div.highlighter-rouge').forEach((block) => {
+    // Extract language from class and set as data attribute for CSS label
+    const langClass = [...block.classList].find((c) => c.startsWith('language-'));
+    if (langClass) {
+      block.setAttribute('data-lang', langClass.replace('language-', ''));
+    }
+
+    // Copy button
+    const btn = document.createElement('button');
+    btn.className = 'code-copy-btn';
+    btn.type = 'button';
+    btn.setAttribute('aria-label', 'Copy code');
+    btn.textContent = 'Copy';
+
+    btn.addEventListener('click', async () => {
+      const code = block.querySelector('code');
+      if (!code) return;
+      try {
+        await navigator.clipboard.writeText(code.innerText);
+        btn.textContent = 'Copied!';
+        btn.classList.add('copied');
+        window.setTimeout(() => {
+          btn.textContent = 'Copy';
+          btn.classList.remove('copied');
+        }, 1800);
+      } catch {
+        /* clipboard unavailable */
+      }
+    });
+
+    block.appendChild(btn);
+  });
+
   // Auto target=_blank for external links
   const currentOrigin = window.location.origin;
   document.querySelectorAll("a[href]").forEach((link) => {

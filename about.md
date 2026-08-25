@@ -4,17 +4,19 @@ title: Software engineer, occasional tech lead, based in Colombo.
 permalink: /about/
 eyebrow: About
 lede: >-
-  I've spent the last 6+ years building the systems that fintech and SaaS
-  companies quietly depend on — payment infrastructure, booking platforms,
-  and the pipelines that keep them shipping.
-description: About Milanda Wijekoon, Associate Technical Lead specializing in fintech and SaaS engineering.
+  I've spent 6+ years building software that businesses quietly depend on —
+  payment infrastructure, product platforms, cloud architecture, and the
+  engineering foundations that let teams keep shipping with confidence.
+description: About Milanda Wijekoon, Associate Technical Lead specialising in software architecture, full-stack development, and technical leadership.
 ---
 
-I started out building backend services for a UK travel insurance platform, then spent the last six years at OpusXenta (Byond), where I worked across the company's SaaS and fintech engineering teams — eventually leading a 5-person team on Byond Market, a no-code marketplace builder.
+I build software solutions for businesses across a range of industries. My background covers full-stack engineering, payment gateway integration, cloud infrastructure, and technical leadership — with most of my experience centred around PHP/Laravel systems built to handle real production load.
 
-Along the way I've integrated more payment gateways than I can count offhand, migrated a production Laravel app across five major versions without downtime, and moved infrastructure from a monolith to a multi-container architecture. I care about systems that are boring in the best way — predictable, well-instrumented, and easy for the next engineer to reason about.
+Over the years I've integrated multiple payment providers, led teams through large-scale codebase migrations, moved infrastructure from monolithic architectures to containerised multi-service deployments, and helped growing engineering teams establish better practices around code quality, review, and release management.
 
-These days I also lean on AI-assisted development — Claude Code and GitHub Copilot — to move faster on the repetitive parts, while keeping the same bar for code quality and review on everything that ships.
+I care about systems that are reliable in the best sense — predictable, well-instrumented, and straightforward for the next engineer to understand and extend. Getting that right is rarely glamorous, but it's what makes a product sustainable.
+
+I also work with AI-assisted development tooling — using LLM integrations to move faster on the repetitive parts of the job, while keeping the same quality bar on everything that ships.
 
 ## Education
 
@@ -23,6 +25,6 @@ These days I also lean on AI-assisted development — Claude Code and GitHub Cop
 
 ## Toolkit
 
-PHP, Laravel, Vue.js, Node.js, TypeScript, AWS, Docker, MySQL, MongoDB — and lately, a fair amount of time spent getting AI tooling to actually pull its weight in a real engineering workflow.
+PHP, Laravel, Vue.js, Node.js, TypeScript, AWS, Docker, MySQL, MongoDB, and an increasing amount of time spent building and integrating AI tooling into practical engineering workflows.
 
 <p style="margin-top:36px;"><a class="btn btn-primary" href="/contact/">Get in Touch &rarr;</a></p>

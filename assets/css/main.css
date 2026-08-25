@@ -197,6 +197,125 @@ body.nav-open .head-burger span:nth-child(3){transform:translateY(-6px) rotate(-
   margin:0;padding-left:20px;border-left:3px solid var(--accent);color:var(--midgrey);font-style:italic;font-size:1.7rem;
 }
 
+/* ---------- article body: tables, links, hr, strong ---------- */
+.article-body a:not(.btn){color:var(--accent);text-decoration:underline;text-underline-offset:3px;}
+.article-body a:not(.btn):hover{color:var(--accent-strong);}
+.article-body strong{font-weight:700;color:var(--darkgrey);}
+.article-body em{font-style:italic;}
+.article-body hr{border:none;border-top:1px solid var(--border);margin:40px 0;}
+
+.article-body table{
+  width:100%;border-collapse:collapse;font-size:1.5rem;margin:28px 0;
+  border-radius:10px;overflow:hidden;border:1px solid var(--border);
+}
+.article-body th{
+  background:var(--lightgrey);text-align:left;padding:11px 16px;
+  font-weight:700;font-size:1.35rem;color:var(--darkgrey);
+  border-bottom:1px solid var(--border);letter-spacing:0.01em;
+}
+.article-body td{
+  padding:11px 16px;border-bottom:1px solid var(--border);
+  color:var(--darkgrey);vertical-align:top;line-height:1.55;
+}
+.article-body tr:last-child td{border-bottom:none;}
+.article-body tr:nth-child(even) td{background:rgba(241,245,249,0.55);}
+
+/* ---------- inline code ---------- */
+.article-body :not(pre) > code{
+  font-family:var(--font-mono);font-size:0.875em;
+  background:#f1f5f9;color:#0f172a;
+  padding:2px 7px;border-radius:5px;
+  border:1px solid #e2e8f0;
+  white-space:nowrap;
+}
+
+/* ---------- code block container (fenced blocks only — div, not inline spans) ---------- */
+.article-body div.highlighter-rouge{
+  position:relative;margin:32px -4px;
+  border-radius:12px;overflow:hidden;
+  border:1px solid rgba(255,255,255,0.07);
+  background:#0d1117;
+  box-shadow:0 4px 24px rgba(0,0,0,0.18);
+}
+
+/* language label */
+.article-body div.highlighter-rouge[data-lang]::before{
+  content:attr(data-lang);
+  position:absolute;top:0;left:0;
+  padding:5px 14px;font-family:var(--font-mono);font-size:1.1rem;font-weight:600;
+  color:#7d8590;background:rgba(255,255,255,0.04);
+  border-bottom-right-radius:8px;
+  text-transform:uppercase;letter-spacing:0.06em;
+  pointer-events:none;z-index:1;
+}
+
+/* copy button */
+.code-copy-btn{
+  position:absolute;top:8px;right:10px;
+  padding:4px 12px;font-family:var(--font-mono);font-size:1.15rem;font-weight:500;
+  color:#7d8590;background:rgba(255,255,255,0.05);
+  border:1px solid rgba(255,255,255,0.1);border-radius:6px;
+  cursor:pointer;transition:color .15s,background .15s,border-color .15s;
+  z-index:2;line-height:1.6;
+}
+.code-copy-btn:hover{color:#e2e8f0;background:rgba(255,255,255,0.11);border-color:rgba(255,255,255,0.22);}
+.code-copy-btn.copied{color:#4ade80;border-color:rgba(74,222,128,0.3);background:rgba(74,222,128,0.06);}
+
+/* pre / code inside block */
+.article-body div.highlighter-rouge .highlight{background:transparent;}
+.article-body div.highlighter-rouge .highlight pre{
+  margin:0;padding:20px 20px 18px;overflow-x:auto;
+  background:transparent;-webkit-overflow-scrolling:touch;
+  scrollbar-width:thin;scrollbar-color:#2d3748 transparent;
+}
+.article-body div.highlighter-rouge[data-lang] .highlight pre{padding-top:38px;}
+.article-body div.highlighter-rouge .highlight pre::-webkit-scrollbar{height:5px;}
+.article-body div.highlighter-rouge .highlight pre::-webkit-scrollbar-thumb{background:#2d3748;border-radius:4px;}
+.article-body div.highlighter-rouge .highlight code{
+  font-family:var(--font-mono);font-size:1.35rem;line-height:1.72;
+  color:#e6edf3;background:transparent;border:none;padding:0;
+  white-space:pre;display:block;
+}
+
+/* ---------- rouge syntax token colours (dark / github-dark inspired) ---------- */
+/* Comments */
+.highlight .c,.highlight .c1,.highlight .cm,.highlight .cp,.highlight .cs,.highlight .cd{color:#7d8590;font-style:italic;}
+/* Keywords: class, function, public, private, return, if, foreach, match … */
+.highlight .k,.highlight .kr,.highlight .kn,.highlight .kp,.highlight .kd{color:#ff7b72;}
+/* Keyword type: int, string, bool, array, void … */
+.highlight .kt{color:#ffa657;}
+/* Class / type names */
+.highlight .nc,.highlight .nn{color:#ffa657;}
+/* Function / method names */
+.highlight .nf,.highlight .fm{color:#d2a8ff;}
+/* Strings */
+.highlight .s,.highlight .s1,.highlight .s2,.highlight .sb,.highlight .sc,.highlight .sd,.highlight .sh,.highlight .sr,.highlight .ss,.highlight .sx{color:#a5d6ff;}
+/* String interpolation / heredoc sigil */
+.highlight .si,.highlight .se{color:#79c0ff;}
+/* Numbers */
+.highlight .m,.highlight .mb,.highlight .mf,.highlight .mh,.highlight .mi,.highlight .mo,.highlight .il{color:#79c0ff;}
+/* Variables: $var in PHP */
+.highlight .nv,.highlight .vi,.highlight .vc,.highlight .vg{color:#ffa657;}
+/* Constants / named constants */
+.highlight .no{color:#79c0ff;}
+/* Operators */
+.highlight .o,.highlight .ow{color:#ff7b72;}
+/* Punctuation */
+.highlight .p{color:#e6edf3;}
+/* Attributes / decorators */
+.highlight .na,.highlight .nd{color:#d2a8ff;}
+/* Builtins */
+.highlight .nb{color:#c9d1d9;}
+/* Tags (SQL keywords, HTML) */
+.highlight .nt{color:#7ee787;}
+/* Name other (often type-hint in PHP) */
+.highlight .nx{color:#c9d1d9;}
+/* Generic output / lineno */
+.highlight .go{color:#7d8590;}
+.highlight .lineno{color:#4d5566;user-select:none;padding-right:16px;}
+/* Error */
+.highlight .err{color:#ff7b72;background:rgba(255,123,114,0.1);}
+
 .article-share{
   margin-top:48px;padding-top:24px;border-top:1px solid var(--border);
   display:flex;align-items:center;gap:14px;flex-wrap:wrap;

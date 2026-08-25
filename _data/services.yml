@@ -1,34 +1,47 @@
-- title: Payment & Fintech Engineering
+- title: Software Solution Design & Architecture
   desc: >-
-    Gateway integrations (Payrix, Windcave, Square, and more), unified payment
-    middleware, QR and terminal payment flows, and PCI-conscious architecture.
-  tags: [PHP, Laravel, Node.js, AWS]
+    Translating business problems into well-structured software — from initial
+    discovery through system design, data modelling, and architecture decisions
+    that hold up as your product grows.
+  tags: [System Design, Architecture, PHP, Laravel, MySQL]
+  icon: layers
+
+- title: Full-Stack Development
+  desc: >-
+    End-to-end product delivery across backend APIs, database design, and
+    front-end interfaces — built to a production standard with clean code,
+    automated tests, and reliable deployment pipelines.
+  tags: [PHP, Laravel, Vue.js, Node.js, TypeScript, Docker]
+  icon: bolt
+
+- title: Payment Gateway Integration
+  desc: >-
+    Integrating payment providers into your platform — checkout flows, webhooks,
+    refunds, and the architecture patterns that keep payment logic clean,
+    auditable, and straightforward to extend.
+  tags: [Stripe, PayPal, PHP, Laravel, PCI DSS]
   icon: card
 
-- title: Full-Stack SaaS Development
+- title: AI-Assisted Tool Development
   desc: >-
-    End-to-end product builds — API design, database architecture, front-end
-    delivery with Vue.js, and deployment pipelines.
-  tags: [Vue.js, Laravel, MySQL, Docker]
-  icon: bolt
+    Building practical AI-powered tools for business — document processing,
+    intelligent assistants, automated workflows, and LLM integrations that
+    deliver real productivity gains rather than demos.
+  tags: [LLM, Claude, OpenAI, PHP, Python]
+  icon: bulb
 
 - title: Cloud Architecture & AWS Consulting
   desc: >-
-    Migrating monoliths to containerized, multi-service architecture with an
-    eye on cost, reliability, and deploy safety.
-  tags: [AWS, Docker, System Design]
+    Designing and migrating infrastructure on AWS — containerised services,
+    scalable deployments, cost optimisation, and the observability layer that
+    tells you what your system is actually doing.
+  tags: [AWS, Docker, CI/CD, System Design]
   icon: layers
 
-- title: Technical Leadership & Mentoring
+- title: Tech Leadership & Mentoring
   desc: >-
-    Embedded tech lead support — code review, architecture decisions, release
-    management, and growing engineers on your team.
-  tags: [Agile, Code Review, Team Leadership]
+    Embedded technical leadership — code review, architecture guidance, release
+    management, and hands-on mentoring that helps engineering teams ship with
+    more confidence and consistency.
+  tags: [Team Leadership, Code Review, Agile, Mentoring]
   icon: users
-
-- title: AI-Assisted Development Setup
-  desc: >-
-    Getting your team productive with LLM tooling — Claude Code, Copilot
-    workflows, and where AI-assisted delivery genuinely helps vs. gets in the way.
-  tags: [Claude Code, GitHub Copilot, LLM]
-  icon: bulb
