@@ -1,7 +1,11 @@
 ---
-title: "Clean Architecture"
+title: "Clean Architecture Explained with a Real-World Use Case"
 category: Architecture
 excerpt: >-
+  Clean Architecture in plain terms: the concentric circles, the single
+  dependency rule that makes them work, and one real feature — placing an
+  order in a small e-commerce app — built the Clean way in PHP. A 10–15
+  minute read.
 ---
 
 Clean Architecture is not a framework, a folder layout you copy, or a library you install. It is one idea about **which direction your code is allowed to depend**, drawn as a set of concentric circles by Robert C. Martin in 2012.
