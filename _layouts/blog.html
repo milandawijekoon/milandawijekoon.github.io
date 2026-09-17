@@ -12,9 +12,16 @@ layout: default
 
   <section class="section outer" style="padding-top:0;">
     <div class="inner">
-      <div class="post-feed">
+      {% assign categories = site.posts | map: "category" | uniq | sort %}
+      <ul class="chip-list filter-list" id="category-filter">
+        <li><button type="button" class="chip filter-chip is-active" data-filter="all">All</button></li>
+        {% for category in categories %}
+        <li><button type="button" class="chip filter-chip" data-filter="{{ category }}">{{ category }}</button></li>
+        {% endfor %}
+      </ul>
+      <div class="post-feed" id="post-feed">
         {% for post in site.posts %}
-        <article class="post-card">
+        <article class="post-card" data-category="{{ post.category }}">
           <ul class="chip-list"><li class="chip">{{ post.category }}</li></ul>
           <p class="post-card-meta">{{ post.date | date: "%-d %b, %Y" }} &middot; {% include reading_time.html content=post.content %} min read</p>
           <h3 class="post-card-title"><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
@@ -22,6 +29,35 @@ layout: default
         </article>
         {% endfor %}
       </div>
+      <p class="post-feed-empty" id="post-feed-empty" hidden>No posts in this category yet.</p>
     </div>
   </section>
 </main>
+
+<script>
+(function () {
+  var filterList = document.getElementById('category-filter');
+  var posts = document.querySelectorAll('#post-feed .post-card');
+  var emptyState = document.getElementById('post-feed-empty');
+  if (!filterList) return;
+
+  filterList.addEventListener('click', function (event) {
+    var button = event.target.closest('.filter-chip');
+    if (!button) return;
+
+    filterList.querySelectorAll('.filter-chip').forEach(function (chip) {
+      chip.classList.remove('is-active');
+    });
+    button.classList.add('is-active');
+
+    var filter = button.getAttribute('data-filter');
+    var visibleCount = 0;
+    posts.forEach(function (post) {
+      var match = filter === 'all' || post.getAttribute('data-category') === filter;
+      post.hidden = !match;
+      if (match) visibleCount++;
+    });
+    emptyState.hidden = visibleCount !== 0;
+  });
+})();
+</script>

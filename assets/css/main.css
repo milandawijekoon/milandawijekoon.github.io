@@ -142,6 +142,15 @@ body.nav-open .head-burger span:nth-child(3){transform:translateY(-6px) rotate(-
 .post-card-title a:hover{color:var(--accent);}
 .post-card-excerpt{margin-top:10px;max-width:680px;font-size:1.6rem;line-height:1.55;color:var(--midgrey);}
 
+.filter-list{margin-bottom:28px;}
+.filter-chip{
+  border:1px solid transparent;cursor:pointer;font-family:inherit;line-height:1.2;
+  transition:background .15s ease,color .15s ease,border-color .15s ease;
+}
+.filter-chip:hover{border-color:var(--accent-strong);}
+.filter-chip.is-active{color:#fff;background:var(--accent-strong);}
+.post-feed-empty{margin-top:16px;font-size:1.5rem;color:var(--secondary-text);}
+
 /* ---------- services ---------- */
 .service-grid{display:flex;flex-direction:column;}
 .service-card{
