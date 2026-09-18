@@ -52,7 +52,70 @@ In a typical CRUD app, a bug means bad data. In a fintech app, a bug means **mon
 
 ---
 
-## 2. How a card payment actually moves
+## 2. Payment gateways and processors
+
+A single `charge.create()` call looks like it talks to one system. It actually passes through five separate companies, each doing one specific job. Engineers new to fintech tend to lump them together as "the payment provider" — which is fine until something goes wrong, and you need to know exactly which company in the chain caused it.
+
+| Role | Its one job | Example |
+| --- | --- | --- |
+| **Payment gateway** | Collects the card/wallet details from your checkout and passes them on securely. This is the API you actually integrate with. | Stripe, Adyen, Braintree |
+| **Payment processor** | Sits behind the gateway and does the technical work of talking to card networks and banks — sending authorization requests, running settlement, moving funds. | Often bundled with the gateway, sometimes a separate company |
+| **Acquiring bank** | The merchant's bank. Receives the settled money on the merchant's behalf. | Merchant's business bank |
+| **Card network** | The rail connecting the merchant's side to the customer's side. Sets the rules and fees everyone downstream has to follow. | Visa, Mastercard |
+| **Issuing bank** | The customer's bank. It's the one that actually says yes or no to the transaction and holds the customer's money. | Customer's bank |
+
+<figure>
+<svg id="dg-gateway-path" viewBox="0 0 700 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A left to right chain: Customer, then Merchant app, then Payment Gateway, then Processor, then Card Network, then Issuing Bank, with an arrow labeled approval or decline going back down the same chain to the customer.">
+  <style>
+    #dg-gateway-path .lbl{font:600 10.5px -apple-system,Segoe UI,Roboto,sans-serif;fill:#0f172a;}
+    #dg-gateway-path .sub{font:9px -apple-system,Segoe UI,Roboto,sans-serif;fill:#475569;}
+  </style>
+  <defs>
+    <marker id="a2" markerWidth="9" markerHeight="9" refX="5" refY="2.5" orient="auto"><path d="M0,0 L5,2.5 L0,5 Z" fill="#1d4ed8"/></marker>
+    <marker id="a3" markerWidth="9" markerHeight="9" refX="5" refY="2.5" orient="auto"><path d="M0,0 L5,2.5 L0,5 Z" fill="#16a34a"/></marker>
+  </defs>
+
+  <rect x="5" y="20" width="100" height="54" rx="8" fill="#eff6ff" stroke="#93c5fd"/>
+  <text class="lbl" x="55" y="42" text-anchor="middle">Customer</text>
+  <text class="sub" x="55" y="58" text-anchor="middle">enters card</text>
+
+  <path d="M105 47 H135" stroke="#1d4ed8" stroke-width="1.8" marker-end="url(#a2)"/>
+  <rect x="135" y="20" width="100" height="54" rx="8" fill="#dbeafe" stroke="#60a5fa"/>
+  <text class="lbl" x="185" y="42" text-anchor="middle">Merchant app</text>
+  <text class="sub" x="185" y="58" text-anchor="middle">your code</text>
+
+  <path d="M235 47 H265" stroke="#1d4ed8" stroke-width="1.8" marker-end="url(#a2)"/>
+  <rect x="265" y="20" width="105" height="54" rx="8" fill="#bfdbfe" stroke="#3b82f6"/>
+  <text class="lbl" x="317" y="42" text-anchor="middle">Gateway</text>
+  <text class="sub" x="317" y="58" text-anchor="middle">Stripe, Adyen…</text>
+
+  <path d="M370 47 H400" stroke="#1d4ed8" stroke-width="1.8" marker-end="url(#a2)"/>
+  <rect x="400" y="20" width="100" height="54" rx="8" fill="#93c5fd" stroke="#3b82f6"/>
+  <text class="lbl" x="450" y="42" text-anchor="middle">Processor</text>
+  <text class="sub" x="450" y="58" text-anchor="middle">bank connectivity</text>
+
+  <path d="M500 47 H530" stroke="#1d4ed8" stroke-width="1.8" marker-end="url(#a2)"/>
+  <rect x="530" y="20" width="80" height="54" rx="8" fill="#60a5fa" stroke="#2563eb"/>
+  <text class="lbl" x="570" y="42" text-anchor="middle" fill="#fff">Card network</text>
+  <text class="sub" x="570" y="58" text-anchor="middle" fill="#e0e7ff">Visa/MC</text>
+
+  <path d="M610 47 H640" stroke="#1d4ed8" stroke-width="1.8" marker-end="url(#a2)"/>
+  <rect x="612" y="90" width="83" height="54" rx="8" fill="#3b82f6" stroke="#1d4ed8"/>
+  <text class="lbl" x="653" y="112" text-anchor="middle" fill="#fff">Issuing bank</text>
+  <text class="sub" x="653" y="128" text-anchor="middle" fill="#e0e7ff">approves/declines</text>
+
+  <path d="M640 74 V95" stroke="#1d4ed8" stroke-width="1.8" marker-end="url(#a2)"/>
+  <path d="M612 130 H55 V74" fill="none" stroke="#16a34a" stroke-width="1.6" stroke-dasharray="4 3" marker-end="url(#a3)"/>
+  <text class="sub" x="330" y="146" text-anchor="middle" fill="#15803d">Approval / decline travels back down the same chain</text>
+</svg>
+<figcaption style="font-size:1.25rem;color:#64748b;margin-top:8px;">You almost always integrate <em>with</em> a gateway rather than build one — but every hop in this chain can add its own latency, fee, or error code.</figcaption>
+</figure>
+
+**Why it matters:** most engineers only ever call the gateway's API, so it's tempting to assume any problem is your integration's fault. It usually isn't. A cryptic decline code, a delayed payout, an unexpected fee — each one traces back to exactly one link in this chain: the issuer's fraud rules, the network's cut-off time, or a processor outage. Knowing the chain tells you where to actually look first, and which vendor's status page to check, instead of debugging your own code for an hour before realizing the problem was never yours.
+
+---
+
+## 3. How a card payment actually moves
 
 An API call returning "success" almost always means **authorization** succeeded — not that money has moved. Four distinct events happen over the life of one payment, each with different timing and different reversibility:
 
@@ -94,11 +157,26 @@ An API call returning "success" almost always means **authorization** succeeded 
 <figcaption style="font-size:1.25rem;color:#64748b;margin-top:8px;">A "refund" is never an undo — it's a new, opposite transaction. Model it that way from day one.</figcaption>
 </figure>
 
-A **chargeback** is the adversarial version of a refund: the cardholder's bank forcibly reverses a settled transaction, the merchant can contest it with evidence, and it carries a fee either way.
+Here's what each step actually means, and whose job it is:
+
+1. **Authorization** — your app asks the issuing bank, through the gateway and processor, "does this customer have $49.99 available, and are you willing to guarantee it?" The **issuing bank** checks the balance/credit limit and fraud rules, then places a **hold** on that amount. Nothing has moved yet — this is a promise, not a payment. Responsibility: issuing bank decides yes/no; your app just waits for the answer.
+
+2. **Capture** — your app tells the gateway "I'm ready to actually take this money now," usually at shipment rather than at order time. This converts the hold from step 1 into a real request to collect funds. Responsibility: the **merchant** (you) decides when to capture — capturing before you can fulfil the order is a common source of refund headaches if the order later falls through.
+
+3. **Settlement** — the **processor** and **card network** batch up all of a day's captured transactions and actually move the money: issuer → network → acquirer → merchant. This is what turns "approved" into "funds in the bank," and it's why there's usually a T+1 or T+2 day lag before a captured payment shows up as real, spendable money. Responsibility: entirely the processor/network's batch cycle — your app has no control over its timing.
+
+4. **Payout** — once funds have settled into the platform's account, they're transferred out to the merchant's own bank account, on whatever schedule the gateway offers (daily, weekly). Responsibility: the **gateway/processor** executes it, but the merchant usually configures the schedule.
+
+Two more paths branch off this main flow, and mixing them up is a common modeling mistake:
+
+- **Void / reversal** — cancels an authorization or a capture *before settlement happens*. Because the money never actually moved, this is fast and free. Responsibility: the merchant requests it, the issuer releases the hold.
+- **Refund** — returns money *after* it has settled. This is not an undo — it's a brand-new transaction moving funds back to the customer, and it can be partial, multiple, or issued weeks later. Responsibility: the merchant initiates it; the acquirer/network process it like any other payment, just in reverse.
+
+A **chargeback** is the adversarial version of a refund: the **cardholder**, through their **issuing bank**, forcibly reverses a settled transaction — usually over fraud or a dispute — without the merchant's consent. The merchant can contest it with evidence, but it carries a penalty fee regardless of the outcome, making it the most expensive of these four outcomes for the merchant.
 
 ---
 
-## 3. Why the ledger is double-entry, not a number in a column
+## 4. Why the ledger is double-entry, not a number in a column
 
 The oldest trick in accounting is also the best bug-detector available to you: every transaction touches **at least two accounts**, one debited, one credited, and the two always sum to zero. If they don't, you have a bug or fraud — and you find out immediately instead of during an audit six months later.
 
@@ -130,7 +208,7 @@ In a real ledger table, rows are **append-only**. A mistake isn't edited — it'
 
 ---
 
-## 4. Real-world use case: checkout to payout, end to end
+## 5. Real-world use case: checkout to payout, end to end
 
 Take an ordinary online store checkout and follow the money through every layer discussed above.
 
@@ -154,7 +232,7 @@ If a customer disputes it three weeks later, a chargeback reverses the settled e
 
 ---
 
-## 5. The laws that shape your architecture (not an afterthought)
+## 6. The laws that shape your architecture (not an afterthought)
 
 Regulation isn't paperwork bolted on after the system is built — for a fintech engineer it's an **input to the design**, the same way a latency budget is.
 
@@ -170,7 +248,7 @@ Regulation isn't paperwork bolted on after the system is built — for a fintech
 
 ---
 
-## 6. Risks engineers introduce — and how to design against them
+## 7. Risks engineers introduce — and how to design against them
 
 <figure>
 <svg id="dg-risks" viewBox="0 0 680 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Four risk categories arranged as cards: duplicate charges from retries, mitigated by idempotency keys; out of order or lost webhooks, mitigated by signature verification and reconciliation; floating point rounding errors, mitigated by integer minor units; race conditions on concurrent debits, mitigated by row level locking.">
