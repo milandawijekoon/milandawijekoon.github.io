@@ -1,6 +1,7 @@
 ---
 layout: page
 title: Software engineer, occasional tech lead, based in Colombo.
+short_title: About
 permalink: /about/
 eyebrow: About
 lede: >-
