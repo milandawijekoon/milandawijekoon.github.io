@@ -31,6 +31,12 @@ kramdown:
 
 permalink: /blog/:title/
 
+# Posts are dated by local (UTC+5:30) calendar day, but Jekyll's default
+# future-post check compares against UTC. Without this, a post dated
+# "today" can be silently excluded from the build for the first ~5.5
+# hours of the local day, since UTC is still on the previous date.
+future: true
+
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
