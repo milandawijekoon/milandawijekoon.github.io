@@ -1,6 +1,6 @@
 ---
 title: "Payment Gateways Explained: How Online Payments Work and How to Integrate Them with Laravel"
-category: Payments
+category: Fintech
 excerpt: >-
   A complete guide to understanding online payment flows and building a clean,
   extensible payment integration in Laravel — covering architecture, webhooks,

@@ -1,6 +1,6 @@
 ---
 title: "Idempotency in Payment Systems: How to Stop Double Charges Caused by Retries and Network Failures"
-category: Payments
+category: Fintech
 excerpt: >-
   A short, diagram-led deep-dive on why duplicate transactions happen, how
   timeouts and retries turn one payment into two, and how to design
