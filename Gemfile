@@ -3,6 +3,7 @@ source "https://rubygems.org"
 gem "csv"
 gem "bigdecimal"
 gem "webrick"
+gem "base64"
 gem "jekyll"
 
 group :jekyll_plugins do

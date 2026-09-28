@@ -15,6 +15,12 @@
 <title>{% if page.short_title %}{{ page.short_title }}{% else %}{{ page.title }}{% endif %}{% if site.title %} | {{ site.title }}{% endif %}</title>
 {% seo title=false %}
 {% feed_meta %}
+{% if site.adsense.client != "" %}
+<meta name="google-adsense-account" content="{{ site.adsense.client }}" />
+{% endif %}
+{% if page.layout == "post" and site.adsense.client != "" %}
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client={{ site.adsense.client }}" crossorigin="anonymous"></script>
+{% endif %}
 </head>
 <body>
 {% if page.layout == "post" %}<div id="reading-progress"></div>{% endif %}

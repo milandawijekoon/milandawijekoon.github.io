@@ -24,6 +24,19 @@ social:
 logo: /assets/images/logo.png
 image: /assets/images/logo.png
 
+# Google AdSense. The site-wide meta tag (for ownership verification)
+# renders once client is set. The loader script renders on blog post
+# pages only (_layouts/post.html), so ads stay off every other page.
+# The in-article ad slot stays dormant until in_article_slot is also
+# filled in (create the ad unit in AdSense > Ads > By ad unit > In-feed
+# or In-article, then paste its numeric slot ID here) — otherwise it
+# renders a broken/empty ad request. Once approved, also fill in
+# /ads.txt with the line AdSense gives you (Account > Sites > "View
+# site" > ads.txt).
+adsense:
+  client: "ca-pub-6134797434918002"
+  in_article_slot: ""
+
 markdown: kramdown
 kramdown:
   input: GFM
