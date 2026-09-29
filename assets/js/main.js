@@ -1,4 +1,25 @@
 (() => {
+  // Theme toggle (defaults to system preference until the user chooses)
+  const themeBtn = document.querySelector(".theme-toggle");
+  if (themeBtn) {
+    const root = document.documentElement;
+    const mq = window.matchMedia("(prefers-color-scheme: dark)");
+    const current = () => root.getAttribute("data-theme") || (mq.matches ? "dark" : "light");
+    const sync = () => {
+      const dark = current() === "dark";
+      themeBtn.setAttribute("aria-pressed", String(dark));
+      themeBtn.setAttribute("aria-label", dark ? "Switch to light mode" : "Switch to dark mode");
+    };
+    themeBtn.addEventListener("click", () => {
+      const next = current() === "dark" ? "light" : "dark";
+      root.setAttribute("data-theme", next);
+      try { localStorage.setItem("theme", next); } catch (e) {}
+      sync();
+    });
+    mq.addEventListener("change", sync);
+    sync();
+  }
+
   // Mobile nav toggle
   const burger = document.querySelector(".head-burger");
   const nav = document.getElementById("primary-navigation");
