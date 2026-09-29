@@ -37,6 +37,12 @@ adsense:
   client: "ca-pub-6134797434918002"
   in_article_slot: ""
 
+# Google Analytics 4. Paste the Measurement ID (G-XXXXXXXXXX) from
+# GA > Admin > Data streams > your web stream. The tag only renders in
+# production builds (GitHub Pages sets JEKYLL_ENV=production), so local
+# `jekyll serve` runs don't count as visits. Leave empty to disable.
+google_analytics: "G-RK9EN2Y436"
+
 markdown: kramdown
 kramdown:
   input: GFM
