@@ -1,7 +1,1 @@
-# Google AdSense authorized sellers file.
-# Once your AdSense application is approved, replace pub-0000000000000000
-# below with your real publisher ID (AdSense > Account > Sites > your
-# site > "View site" will show you the exact line to paste) and remove
-# the leading "# ".
-#
-# google.com, pub-0000000000000000, DIRECT, f08c47fec0942fa0
+google.com, pub-6134797434918002, DIRECT, f08c47fec0942fa0
