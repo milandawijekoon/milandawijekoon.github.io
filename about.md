@@ -26,6 +26,6 @@ I also work with AI-assisted development tooling — using LLM integrations to m
 
 ## Toolkit
 
-PHP, Laravel, Vue.js, Node.js, TypeScript, AWS, Docker, MySQL, MongoDB, and an increasing amount of time spent building and integrating AI tooling into practical engineering workflows.
+PHP, Laravel, JavaScript, TypeScript, Node.js, Vue.js, Docker, AWS, SQL, MongoDB, AI & LLM Tools, and an increasing amount of time spent building and integrating AI tooling into practical engineering workflows.
 
 <p style="margin-top:36px;"><a class="btn btn-primary" href="/contact/">Get in Touch &rarr;</a></p>

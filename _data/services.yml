@@ -3,7 +3,7 @@
     Translating business problems into well-structured software — from initial
     discovery through system design, data modelling, and architecture decisions
     that hold up as your product grows.
-  tags: [System Design, Architecture, PHP, Laravel, MySQL]
+  tags: [System Design, Architecture, Deployment, Monitoring]
   icon: layers
 
 - title: Full-Stack Development
@@ -11,7 +11,7 @@
     End-to-end product delivery across backend APIs, database design, and
     front-end interfaces — built to a production standard with clean code,
     automated tests, and reliable deployment pipelines.
-  tags: [PHP, Laravel, Vue.js, Node.js, TypeScript, Docker]
+  tags: [PHP, Laravel, Vue.js, Node.js, TypeScript, SQL, MongoDB, Docker]
   icon: bolt
 
 - title: Payment Gateway Integration
@@ -19,7 +19,7 @@
     Integrating payment providers into your platform — checkout flows, webhooks,
     refunds, and the architecture patterns that keep payment logic clean,
     auditable, and straightforward to extend.
-  tags: [Stripe, PayPal, PHP, Laravel, PCI DSS]
+  tags: [Stripe, Payrix, Till, PCI DSS]
   icon: card
 
 - title: AI-Assisted Tool Development
@@ -27,15 +27,15 @@
     Building practical AI-powered tools for business — document processing,
     intelligent assistants, automated workflows, and LLM integrations that
     deliver real productivity gains rather than demos.
-  tags: [LLM, Claude, OpenAI, PHP, Python]
+  tags: [LLM, Claude, OpenAI, GitHub Copilot, Python]
   icon: bulb
 
 - title: Cloud Architecture & AWS Consulting
   desc: >-
-    Designing and migrating infrastructure on AWS — containerised services,
+    Designing and migrating infrastructure on Raiway / AWS — containerised services,
     scalable deployments, cost optimisation, and the observability layer that
     tells you what your system is actually doing.
-  tags: [AWS, Docker, CI/CD, System Design]
+  tags: [AWS, Raiway, Docker, CI/CD, System Design]
   icon: layers
 
 - title: Tech Leadership & Mentoring
