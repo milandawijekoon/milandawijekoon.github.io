@@ -3,9 +3,8 @@ tagline: Associate Technical Lead
 description: >-
   Milanda Wijekoon — Associate Technical Lead building scalable SaaS and
   fintech platforms with PHP/Laravel, Vue.js, Node.js and AWS.
-# Live site. When the custom domain (milandawijekoon.dev) is finalised,
-# change this to "https://milandawijekoon.dev" and add a CNAME file.
-url: "https://milandawijekoon.github.io"
+# Live site (custom domain via the CNAME file).
+url: "https://milandawijekoon.com"
 baseurl: ""
 lang: en_US
 
