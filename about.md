@@ -1,14 +1,14 @@
 ---
 layout: page
 title: Software engineer, occasional tech lead, based in Colombo.
-short_title: About
+short_title: About Milanda Wijekoon
 permalink: /about/
 eyebrow: About
 lede: >-
   I've spent 6+ years building software that businesses quietly depend on —
   payment infrastructure, product platforms, cloud architecture, and the
   engineering foundations that let teams keep shipping with confidence.
-description: About Milanda Wijekoon, Associate Technical Lead specialising in software architecture, full-stack development, and technical leadership.
+description: About Milanda Wijekoon, Senior Software Engineer specialising in software architecture, full-stack development, and technical leadership.
 ---
 
 I build software solutions for businesses across a range of industries. My background covers full-stack engineering, payment gateway integration, cloud infrastructure, and technical leadership — with most of my experience centred around PHP/Laravel systems built to handle real production load.

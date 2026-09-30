@@ -15,9 +15,28 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
 <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}" />
-<title>{% if page.short_title %}{{ page.short_title }}{% else %}{{ page.title }}{% endif %}{% if site.title %} | {{ site.title }}{% endif %}</title>
+<title>{% if page.url == "/" %}Milanda Wijekoon | Senior Software Engineer in Colombo, Sri Lanka{% else %}{% if page.short_title %}{{ page.short_title }}{% else %}{{ page.title }}{% endif %} | {{ site.title }}{% endif %}</title>
 {% seo title=false %}
 {% feed_meta %}
+{% if page.url == "/" %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "@id": "{{ site.url }}/#person",
+  "name": "Milanda Wijekoon",
+  "alternateName": "Milanda Wijekoon Senior Software Engineer",
+  "url": "{{ site.url }}/",
+  "image": "{{ '/assets/images/profile.jpg' | absolute_url }}",
+  "jobTitle": "Senior Software Engineer",
+  "description": {{ page.description | normalize_whitespace | jsonify }},
+  "address": { "@type": "PostalAddress", "addressLocality": "Colombo", "addressCountry": "LK" },
+  "alumniOf": { "@type": "CollegeOrUniversity", "name": "University of Moratuwa" },
+  "knowsAbout": ["PHP", "Laravel", "Vue.js", "Node.js", "AWS", "Payment gateway integration", "Software architecture", "Fintech"],
+  "sameAs": ["https://linkedin.com/in/milandawijekoon", "https://github.com/milandawijekoon"]
+}
+</script>
+{% endif %}
 {% if site.adsense.client != "" %}
 <meta name="google-adsense-account" content="{{ site.adsense.client }}" />
 {% endif %}
