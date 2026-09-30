@@ -20,8 +20,8 @@ social:
   links:
     - https://linkedin.com/in/milandawijekoon
     - https://github.com/milandawijekoon
-logo: /assets/images/logo.png
-image: /assets/images/logo.png
+logo: /assets/images/profile.jpg
+image: /assets/images/profile.jpg
 
 # Google AdSense. The site-wide meta tag (for ownership verification)
 # renders once client is set. The loader script renders on blog post
@@ -67,7 +67,7 @@ defaults:
   - scope:
       path: ""
     values:
-      image: /assets/images/logo.png
+      image: /assets/images/profile.jpg
   - scope:
       path: ""
       type: posts
