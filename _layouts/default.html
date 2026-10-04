@@ -11,6 +11,7 @@
 <link rel="icon" type="image/png" sizes="32x32" href="{{ '/assets/images/favicon-32.png' | relative_url }}" />
 <link rel="icon" type="image/png" sizes="16x16" href="{{ '/assets/images/favicon-16.png' | relative_url }}" />
 <link rel="apple-touch-icon" sizes="180x180" href="{{ '/assets/images/apple-touch-icon.png' | relative_url }}" />
+{% if page.layout == "home" %}<link rel="preload" as="image" type="image/webp" imagesrcset="{{ '/assets/images/profile-260.webp' | relative_url }} 260w, {{ '/assets/images/profile-520.webp' | relative_url }} 520w" imagesizes="(max-width:1024px) 200px, 260px" fetchpriority="high" />{% endif %}
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />

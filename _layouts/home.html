@@ -5,7 +5,10 @@ layout: default
   <section class="hero outer">
     <div class="hero-bg" aria-hidden="true"></div>
     <div class="inner hero-inner">
-      <img src="{{ '/assets/images/profile.jpg' | relative_url }}" alt="Milanda Wijekoon" class="hero-photo">
+      <picture>
+        <source type="image/webp" srcset="{{ '/assets/images/profile-260.webp' | relative_url }} 260w, {{ '/assets/images/profile-520.webp' | relative_url }} 520w" sizes="(max-width:1024px) 200px, 260px">
+        <img src="{{ '/assets/images/profile-520.jpg' | relative_url }}" srcset="{{ '/assets/images/profile-260.jpg' | relative_url }} 260w, {{ '/assets/images/profile-520.jpg' | relative_url }} 520w" sizes="(max-width:1024px) 200px, 260px" alt="Milanda Wijekoon" class="hero-photo" width="260" height="260" fetchpriority="high" decoding="async">
+      </picture>
       <div class="hero-content">
         <p class="page-eyebrow">Milanda Wijekoon &middot; Senior Software Engineer</p>
         <h1 class="hero-tagline">{{ page.hero_title }}</h1>
