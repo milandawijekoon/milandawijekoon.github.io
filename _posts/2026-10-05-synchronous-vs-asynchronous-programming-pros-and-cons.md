@@ -1,15 +1,24 @@
 ---
-title: "Synchronous vs Asynchronous Programming: How They Work, Pros and Cons"
+title: "Wait or Move On? Synchronous vs Asynchronous Programming Explained, with Benefits, Drawbacks and Real Failures"
 category: Engineering
 excerpt: >-
-  Synchronous code waits. Asynchronous code keeps working while it waits. Learn
-  how each model works, when to use which, and the mistakes that break
-  production. A 9-minute read.
+  Synchronous code waits. Asynchronous code keeps working while it waits. See
+  how each model works under the hood, the strengths and weaknesses of both, the real
+  failures that hurt teams, and how to choose. A 10-minute read.
 ---
 
 You click "Pay". The spinner turns. Behind it, your server calls a payment provider, writes to a database, and sends a confirmation email. If the server does those three things one after another and waits on each, every other customer waits too.
 
-That single choice, **wait or keep working**, is the difference between synchronous and asynchronous programming. It decides how many users one server can handle, how fast your app feels, and how painful your bugs are to find. Reading time: about 9 minutes.
+That single choice, **wait or keep working**, is the difference between synchronous and asynchronous programming. It decides how many users one server can handle, how fast your app feels, and how painful your bugs are to find.
+
+In this article you will learn:
+
+- how synchronous and asynchronous code actually run,
+- the benefits and drawbacks of each model,
+- four real-world stories where the choice mattered,
+- how to pick the right model and avoid the common async mistakes.
+
+Reading time: about 10 minutes.
 
 ---
 
@@ -67,6 +76,27 @@ The diagram is simplified, but the lesson holds: **waiting is the expensive part
 
 ---
 
+## How they work under the hood
+
+**Synchronous (blocking):** when your code asks the operating system to read a file or call a network, the thread is put to sleep until the answer comes back. It cannot run anything else in the meantime. To serve ten users at once, you need ten threads or processes.
+
+**Asynchronous (non-blocking):** your code hands the slow operation to the operating system and gets control back immediately. A loop, often called the **event loop**, keeps track of pending operations. When one finishes, the loop runs the code you attached to it (a callback, or the rest of an `async` function).
+
+```js
+console.log("1. start");
+
+setTimeout(() => console.log("3. timer finished"), 100); // scheduled, not awaited
+
+console.log("2. keep working");
+// Output order: 1, 2, 3
+```
+
+The timer does not stop line 2 from running. This is the heart of async: **starting work and finishing work are two separate moments.**
+
+One important detail: async is not the same as "many things running at the same moment". In Node.js your JavaScript still runs on a single thread. What overlaps is the *waiting*, not the *computing*. Keep this in mind, because it explains most of the failures later in this article.
+
+---
+
 ## Synchronous programming
 
 ### How it works
@@ -83,14 +113,14 @@ echo "Done";
 
 The order is obvious. If you read the code top to bottom, you know exactly what happens and when.
 
-### Pros
+### Benefits
 
 - **Easy to read and reason about.** Execution follows the order of the lines.
 - **Easy to debug.** Stack traces point to the real cause, and a debugger steps through naturally.
 - **Simple error handling.** A plain `try/catch` around the code works.
 - **No shared-state surprises.** Nothing else runs in the middle of your function.
 
-### Cons
+### Drawbacks
 
 - **Wasted time.** The thread sits idle while it waits.
 - **Poor concurrency per thread.** To serve more users at the same time, you need more threads or processes, and each one costs memory.
@@ -119,14 +149,14 @@ res.json({ user, orders, recommendations });
 
 `await` looks synchronous, but it does not block the thread. While this function waits, the runtime is free to run other requests. When the data arrives, the function continues from where it paused.
 
-### Pros
+### Benefits
 
 - **Better use of one thread.** One thread can juggle thousands of waiting connections.
 - **Faster responses when work is independent.** Three 100 ms calls started together take about 100 ms, not 300 ms.
 - **Responsive UIs.** The browser can keep scrolling and clicking while it fetches data.
 - **Efficient for I/O-heavy servers.** Chat, streaming, APIs, and gateways spend most of their time waiting on the network.
 
-### Cons
+### Drawbacks
 
 - **Harder to reason about.** Order of completion is no longer order of code.
 - **Harder to debug.** Stack traces can lose context across `await` boundaries.
@@ -290,6 +320,7 @@ This is asynchronous design at the system level. The user gets a fast response, 
 
 ## Key takeaways
 
+- **Wait or move on** is the whole difference. Starting work and finishing work are separate moments in async code.
 - **Synchronous** code waits at each step. It is simple and predictable, but it wastes time while waiting.
 - **Asynchronous** code starts slow work and keeps going. It uses one thread well for I/O-heavy tasks, but it adds complexity.
 - **Async helps with waiting, not with computing.** Heavy CPU work needs workers, threads, or queues.
