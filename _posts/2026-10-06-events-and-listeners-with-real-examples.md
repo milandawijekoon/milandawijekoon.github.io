@@ -1,10 +1,12 @@
 ---
-title: "Events and Listeners Explained: Decouple Your Code with Real Examples in JavaScript and Laravel"
+title: "Stop Writing God Functions: Events and Listeners Explained with Real JavaScript and Laravel Examples"
 category: Engineering
 excerpt: >-
-  An event says "this happened". Listeners decide what to do about it. See how
-  the pattern works in the browser, Node.js and Laravel, the mistakes that
-  cause crashes and leaks, and a checklist for using it well. A 10-minute read.
+  One function that does everything is hard to change and scary to touch. An
+  event says "this happened" and listeners decide what to do about it. See a
+  before-and-after refactor, working examples in the browser, Node.js and
+  Laravel, the mistakes that cause crashes and leaks, and a checklist. A
+  10-minute read.
 ---
 
 A customer places an order. Your code must save it, charge the card, send a receipt, update stock, and tell the warehouse. Six months later someone asks for a loyalty-points update and a Slack alert too. The `placeOrder()` function now has 200 lines, knows about every team's needs, and nobody dares touch it.
@@ -13,6 +15,7 @@ Events and listeners solve exactly this. The order code announces **"an order wa
 
 In this article you will learn:
 
+- why a function that does too much becomes a problem, and how events fix it,
 - what events and listeners are, and how they work,
 - real examples in the browser, Node.js and Laravel,
 - the mistakes that cause crashes, leaks and lost data,
@@ -35,6 +38,50 @@ This is the **Observer pattern**, described in the 1994 book *Design Patterns* b
 3. The system **calls each listener** with that data.
 
 The big win is **decoupling**: the code that causes something and the code that reacts to it no longer depend on each other.
+
+---
+
+## Before and after: untangling a god function
+
+Here is the function from the opening, in the style that grows over time:
+
+```php
+// BEFORE: placeOrder() knows about everyone
+public function placeOrder(Cart $cart): Order
+{
+    $order = Order::create([...]);
+
+    $this->payments->charge($order);
+    Mail::to($order->customer)->send(new Receipt($order));
+    $this->stock->decrement($order);
+    $this->loyalty->addPoints($order);   // added in March
+    Slack::notify("New order {$order->id}"); // added in June
+
+    return $order;
+}
+```
+
+Every new requirement means editing this function, re-testing everything in it, and risking the checkout. If the Slack call throws, the customer sees an error for an order that was already created.
+
+Now split the core action from its side effects:
+
+```php
+// AFTER: placeOrder() keeps the core rule and announces the fact
+public function placeOrder(Cart $cart): Order
+{
+    $order = DB::transaction(function () use ($cart) {
+        $order = Order::create([...]);
+        $this->payments->charge($order); // must succeed with the order
+        return $order;
+    });
+
+    OrderPlaced::dispatch($order); // receipt, stock, loyalty, Slack listen here
+
+    return $order;
+}
+```
+
+The charge stays a direct call because the order makes no sense without it. Everything else becomes a listener: `SendReceipt`, `UpdateStock`, `AddLoyaltyPoints`, `NotifySlack`. Adding the next requirement is a new file, not an edit to checkout. The examples below show how this works in each environment.
 
 ---
 
@@ -137,6 +184,18 @@ class SendReceipt implements ShouldQueue
 ```
 
 Now the user gets their response right away, and a queue worker sends the email. You can even stop later listeners by returning `false` from `handle`.
+
+Testing is simple too. `Event::fake()` stops listeners from running, so you can assert the event was dispatched:
+
+```php
+Event::fake();
+
+$this->service->placeOrder($cart);
+
+Event::assertDispatched(OrderPlaced::class);
+```
+
+Then test `SendReceipt` on its own by calling `handle()` with a fake event.
 
 ---
 
@@ -260,4 +319,4 @@ A good test: **"If this listener is removed, does the main action still make sen
 - Remove listeners you add, or you will leak memory and run code twice.
 - Do not use events for steps that must succeed together. Call those directly.
 
-Pick one function in your codebase that does too many things. Ask which parts are really side effects of the main action, and move the first one into a listener this week. Small steps keep the pattern useful and the flow readable.
+Pick one function in your codebase that has grown into a god function. Ask which parts are really side effects of the main action, and move the first one into a listener this week. Small steps keep the pattern useful and the flow readable.
