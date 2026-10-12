@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Software engineer, occasional tech lead, based in Colombo.
+title: Software engineer and technical lead
 short_title: About Milanda Wijekoon
 permalink: /about/
 eyebrow: About
@@ -11,21 +11,40 @@ lede: >-
 description: About Milanda Wijekoon, Senior Software Engineer specialising in software architecture, full-stack development, and technical leadership.
 ---
 
-I build software solutions for businesses across a range of industries. My background covers full-stack engineering, payment gateway integration, cloud infrastructure, and technical leadership — with most of my experience centred around PHP/Laravel systems built to handle real production load.
+I build software for businesses across a range of industries, with most of my experience in PHP/Laravel systems built for real production load. That covers full-stack engineering, payment gateway integration, cloud infrastructure and technical leadership.
 
-Over the years I've integrated multiple payment providers, led teams through large-scale codebase migrations, moved infrastructure from monolithic architectures to containerised multi-service deployments, and helped growing engineering teams establish better practices around code quality, review, and release management.
+Along the way I've integrated multiple payment providers, led large codebase migrations, moved infrastructure from monoliths to containerised multi-service deployments, and helped teams improve code quality, review and release practices.
 
-I care about systems that are reliable in the best sense — predictable, well-instrumented, and straightforward for the next engineer to understand and extend. Getting that right is rarely glamorous, but it's what makes a product sustainable.
+## How I work
 
-I also work with AI-assisted development tooling — using LLM integrations to move faster on the repetitive parts of the job, while keeping the same quality bar on everything that ships.
+I care about systems that are predictable, well-instrumented, and easy for the next engineer to understand and extend. I also use AI-assisted tooling to move faster on repetitive work, while keeping the same quality bar on everything that ships.
 
-## Education
+## Career & education
 
-- **BSc (Hons) Information Technology and Management** — University of Moratuwa, 2016–2019
-- **Diploma in Information Technology** — ESOFT Metro Campus, 2012
+<ol class="timeline">
+{% for job in site.data.experience %}
+  <li class="timeline-item">
+    <span class="timeline-period">{{ job.period }}</span>
+    <h3 class="timeline-role">{{ job.role }}</h3>
+    <p class="timeline-company">{{ job.company }}</p>
+  </li>
+{% endfor %}
+</ol>
 
-## Toolkit
+<h2 id="toolkit">Toolkit</h2>
 
-PHP, Laravel, JavaScript, TypeScript, Node.js, Vue.js, Docker, AWS, SQL, MongoDB, AI & LLM Tools, and an increasing amount of time spent building and integrating AI tooling into practical engineering workflows.
+<ul class="toolkit">
+  <li><span class="stack-tag">PHP</span></li>
+  <li><span class="stack-tag">Laravel</span></li>
+  <li><span class="stack-tag">JavaScript</span></li>
+  <li><span class="stack-tag">TypeScript</span></li>
+  <li><span class="stack-tag">Node.js</span></li>
+  <li><span class="stack-tag">Vue.js</span></li>
+  <li><span class="stack-tag">Docker</span></li>
+  <li><span class="stack-tag">AWS</span></li>
+  <li><span class="stack-tag">SQL</span></li>
+  <li><span class="stack-tag">MongoDB</span></li>
+  <li><span class="stack-tag">AI &amp; LLM Tools</span></li>
+</ul>
 
 <p style="margin-top:36px;"><a class="btn btn-primary" href="/contact/">Get in Touch &rarr;</a></p>

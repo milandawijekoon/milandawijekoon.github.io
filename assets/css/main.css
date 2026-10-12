@@ -609,3 +609,80 @@ footer.site-footer{border-top:1px solid var(--border);padding:40px max(4%,24px);
 :root[data-theme="dark"] .highlight .nt{color:#116329;}
 :root[data-theme="dark"] .highlight .go{color:#6e7781;}
 :root[data-theme="dark"] .highlight .lineno{color:#8c959f;}
+
+/* ---------- featured projects ---------- */
+.eyebrow-mono{margin:0 0 8px;font-family:var(--font-mono);font-size:1.3rem;color:var(--accent);}
+.project-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px;}
+.project-card{
+  display:flex;flex-direction:column;gap:10px;padding:24px;border:1px solid var(--border);
+  border-radius:14px;transition:border-color .15s ease,transform .15s ease;
+}
+.project-card:hover{border-color:var(--accent);transform:translateY(-2px);}
+.project-card.is-featured{border-color:var(--accent);}
+.project-top{display:flex;align-items:center;justify-content:space-between;gap:8px;}
+.project-label{font-family:var(--font-mono);font-size:1.15rem;letter-spacing:.06em;text-transform:uppercase;color:var(--secondary-text);}
+.project-badge{font-family:var(--font-mono);font-size:1.1rem;padding:2px 10px;border-radius:999px;color:var(--accent-strong);background:rgba(37,99,235,0.1);}
+.project-title{margin:0;font-size:2rem;font-weight:700;letter-spacing:-0.01em;}
+.project-desc{margin:0;font-size:1.5rem;line-height:1.6;color:var(--midgrey);}
+.project-card .service-tags{margin-top:auto;padding-top:4px;}
+.project-link{font-size:1.4rem;font-weight:600;}
+
+/* Career timeline (about page) */
+.timeline{list-style:none;margin:24px 0 8px;padding:0 0 0 28px;border-left:2px solid var(--border)}
+.timeline-item{position:relative;padding-bottom:32px}
+.timeline-item:last-child{padding-bottom:0}
+.timeline-item::before{content:"";position:absolute;left:-36px;top:6px;width:14px;height:14px;border-radius:50%;background:var(--bg);border:2px solid var(--accent)}
+.timeline-item:first-child::before{background:var(--accent)}
+.timeline-period{font-family:var(--font-mono);font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--accent)}
+.timeline-item .timeline-role{margin:6px 0 2px;font-size:20px;color:var(--darkgrey)}
+.timeline-company{margin:0 0 8px;color:var(--secondary-text);font-weight:500}
+.hero-role{margin:0 0 14px;font-size:20px;font-weight:600;color:var(--accent)}
+
+/* ---------- breathing room / de-clutter ---------- */
+.inner.wide{max-width:1040px;}
+.section{padding:56px max(4%,24px) 96px;}
+.section.alt{background:var(--lightgrey);margin-top:0;}
+.section.alt .post-card:last-child{border-bottom:0;}
+.page-hero .page-title,.page-hero .page-lede{max-width:720px;}
+.hero{padding:96px max(4%,24px) 88px;}
+.hero .inner{max-width:1040px;}
+.hero-stack{margin-top:36px;}
+.stack-more{color:var(--accent);}
+
+.project-grid{grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:24px;}
+.project-card{padding:28px;gap:12px;}
+.project-grid.compact .project-desc{display:-webkit-box;-webkit-line-clamp:4;-webkit-box-orient:vertical;overflow:hidden;}
+.project-link{margin-top:4px;}
+
+.mini-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:24px;}
+.mini-card{
+  display:flex;flex-direction:column;gap:16px;padding:28px;border:1px solid var(--border);
+  border-radius:14px;color:inherit;transition:border-color .15s ease,transform .15s ease;
+}
+.mini-card:hover{border-color:var(--accent);transform:translateY(-2px);}
+.mini-card .service-title{margin:0;font-size:1.9rem;}
+
+.service-grid.two-col{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;}
+.service-grid.two-col .service-card{
+  grid-template-columns:1fr;gap:16px;padding:28px;border:1px solid var(--border);border-radius:14px;
+}
+.service-grid.two-col .service-card:last-child{border-bottom:1px solid var(--border);}
+.service-grid.two-col .service-tags{margin-top:16px;}
+
+.article-body .toolkit{display:flex;flex-wrap:wrap;gap:8px;margin:0;padding:0;list-style:none;}
+.article-body .toolkit li{margin:0;}
+.timeline-item{padding-bottom:28px;}
+
+@media (max-width:767px){
+  .section{padding:40px max(4%,20px) 64px;}
+  .hero{padding:48px max(4%,20px) 48px;}
+  .service-grid.two-col{grid-template-columns:1fr;}
+  .project-grid{grid-template-columns:1fr;}
+}
+.head-inner{max-width:1040px;}
+.site-footer .inner{max-width:1040px;}
+.hero-stack{max-width:520px;}
+@media (max-width:1024px){.hero-stack{max-width:none;}}
+.mini-card .service-desc{font-size:1.5rem;}
+.mini-card .service-tags{margin-top:auto;}
+.mini-card .project-link{margin-top:4px;}

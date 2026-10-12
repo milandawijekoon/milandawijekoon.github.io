@@ -1,0 +1,45 @@
+- title: OpusPay
+  label: Payments
+  desc: >-
+    A payment gateway middleware connecting OpusXenta's byondCloud and byondPro
+    platforms. I contributed to its design, backend and frontend development,
+    integrations, and ongoing maintenance.
+  tags: [Node.js, Express.js, Laravel, Vue.js, MySQL, Docker, AWS]
+  url: https://opuspay.co/
+
+- title: byondCloud
+  label: SaaS Platform
+  desc: >-
+    A cloud-based online booking and operations platform for the death care
+    industry. I contributed to its design, backend and frontend development,
+    and ongoing maintenance.
+  tags: [Laravel, Vue.js, MySQL, Redis, MongoDB, Docker, AWS]
+  url: https://apps.byond.cloud/
+
+- title: byondMarket
+  label: Marketplace Builder
+  desc: >-
+    A marketplace builder within byondCloud that enables non-technical users
+    to create and launch fully integrated online marketplaces.
+  tags: [Node.js, Express.js, Lit, MySQL, Docker, AWS]
+
+- title: byondDesignSystem
+  label: Design System
+  desc: >-
+    A shared component and icon library documented in Storybook to ensure
+    consistency, reusability, and maintainability across OpusXenta applications.
+  tags: [Vue.js, Storybook, Single-SPA]
+  url: http://ox-dev-byonddesign-foundation-101.s3-website-ap-southeast-1.amazonaws.com/
+
+- title: TaskManager
+  label: Operations
+  desc: >-
+    A cloud-based system within byondCloud for managing and tracking ground
+    workers' tasks.
+  tags: [Laravel, Vue.js, MySQL, Redis, MongoDB, Docker, AWS]
+
+- title: Avanti Travel Insurance
+  label: Insurance
+  desc: A UK-based travel insurance provider.
+  tags: [Java, Spring Boot, Liquibase, Hibernate, Oracle DB]
+  url: https://www.avantitravelinsurance.co.uk/
