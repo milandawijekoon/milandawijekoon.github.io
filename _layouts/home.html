@@ -6,8 +6,8 @@ layout: default
     <div class="hero-bg" aria-hidden="true"></div>
     <div class="inner hero-inner">
       <picture>
-        <source type="image/webp" srcset="{{ '/assets/images/profile-260.webp' | relative_url }} 260w, {{ '/assets/images/profile-520.webp' | relative_url }} 520w" sizes="(max-width:1024px) 200px, 260px">
-        <img src="{{ '/assets/images/profile-520.jpg' | relative_url }}" srcset="{{ '/assets/images/profile-260.jpg' | relative_url }} 260w, {{ '/assets/images/profile-520.jpg' | relative_url }} 520w" sizes="(max-width:1024px) 200px, 260px" alt="Milanda Wijekoon" class="hero-photo" width="260" height="260" fetchpriority="high" decoding="async">
+        <source type="image/webp" srcset="{{ '/assets/images/profile-400.webp' | relative_url }} 400w, {{ '/assets/images/profile-800.webp' | relative_url }} 800w, {{ '/assets/images/profile-1200.webp' | relative_url }} 1200w" sizes="(max-width:1180px) 280px, 380px">
+        <img src="{{ '/assets/images/profile-800.jpg' | relative_url }}" srcset="{{ '/assets/images/profile-400.jpg' | relative_url }} 400w, {{ '/assets/images/profile-800.jpg' | relative_url }} 800w, {{ '/assets/images/profile-1200.jpg' | relative_url }} 1200w" sizes="(max-width:1180px) 280px, 380px" alt="Milanda Wijekoon" class="hero-photo" width="380" height="380" fetchpriority="high" decoding="async">
       </picture>
       <div class="hero-content">
         <h1 class="hero-tagline">Milanda Wijekoon</h1>
@@ -85,7 +85,7 @@ layout: default
         <a class="mini-card" href="{{ '/services/' | relative_url }}">
           <span class="service-icon">{% include icon.html name=service.icon %}</span>
           <h3 class="service-title">{{ service.title }}</h3>
-          <p class="service-desc">{{ service.desc | truncate: 120 }}</p>
+          <p class="service-desc">{{ service.short }}</p>
           <div class="service-tags">
             {% for tag in service.tags limit:3 %}<span class="service-tag">{{ tag }}</span>{% endfor %}
           </div>

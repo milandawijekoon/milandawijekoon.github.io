@@ -1,4 +1,5 @@
 - title: Software Solution Design & Architecture
+  short: Turn business problems into clear system designs that hold up as your product grows.
   desc: >-
     Translating business problems into well-structured software — from initial
     discovery through system design, data modelling, and architecture decisions
@@ -7,6 +8,7 @@
   icon: layers
 
 - title: Full-Stack Development
+  short: Backend APIs, databases and front-ends, delivered to a production standard.
   desc: >-
     End-to-end product delivery across backend APIs, database design, and
     front-end interfaces — built to a production standard with clean code,
@@ -15,6 +17,7 @@
   icon: bolt
 
 - title: Payment Gateway Integration
+  short: Checkout flows, webhooks and refunds, built clean, auditable and easy to extend.
   desc: >-
     Integrating payment providers into your platform — checkout flows, webhooks,
     refunds, and the architecture patterns that keep payment logic clean,
@@ -23,6 +26,7 @@
   icon: card
 
 - title: AI-Assisted Tool Development
+  short: Practical AI tools and LLM integrations that save real time, not just demos.
   desc: >-
     Building practical AI-powered tools for business — document processing,
     intelligent assistants, automated workflows, and LLM integrations that
@@ -31,6 +35,7 @@
   icon: bulb
 
 - title: Cloud Architecture & AWS Consulting
+  short: Containerised, scalable infrastructure on AWS with the observability to run it.
   desc: >-
     Designing and migrating infrastructure on Raiway / AWS — containerised services,
     scalable deployments, cost optimisation, and the observability layer that
@@ -39,6 +44,7 @@
   icon: layers
 
 - title: Tech Leadership & Mentoring
+  short: Hands-on technical leadership that helps your team ship with more confidence.
   desc: >-
     Embedded technical leadership — code review, architecture guidance, release
     management, and hands-on mentoring that helps engineering teams ship with
