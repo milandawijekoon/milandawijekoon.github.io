@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Software engineer and technical lead
+title: Senior Software Engineer / Tech Lead
 short_title: About Milanda Wijekoon
 permalink: /about/
 eyebrow: About
