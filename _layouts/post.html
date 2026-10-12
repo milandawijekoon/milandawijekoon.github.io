@@ -52,9 +52,7 @@ layout: default
 
       <div class="article-share">
         <span style="font-size:1.35rem;color:var(--secondary-text);font-weight:600;">Share this post</span>
-        <a class="share-btn" href="#" data-share="x">X</a>
-        <a class="share-btn" href="#" data-share="linkedin">LinkedIn</a>
-        <a class="share-btn" href="#" data-share="email">Email</a>
+        <a class="share-btn" href="https://www.linkedin.com/sharing/share-offsite/?url={{ page.url | absolute_url | uri_escape }}" target="_blank" rel="noopener" data-share="linkedin">LinkedIn</a>
         <button class="share-btn" type="button" data-share="copy"><span class="share-label">Copy link</span></button>
       </div>
     </div>
