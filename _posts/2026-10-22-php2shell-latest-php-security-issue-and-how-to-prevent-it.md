@@ -1,5 +1,5 @@
 ---
-title: "PHP2Shell: The Latest PHP Security Issue, How to Prevent It, and Which PHP Versions Are Safe"
+title: "PHP2Shell: The Critical Flaw Inside PHP Itself — How to Protect Your Server and Which Versions Are Safe"
 category: Security
 excerpt: >-
   Two critical flaws in PHP itself, not in your application, can let an
