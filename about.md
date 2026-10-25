@@ -19,7 +19,7 @@ Along the way I've integrated multiple payment providers, led large codebase mig
 
 I care about systems that are predictable, well-instrumented, and easy for the next engineer to understand and extend. I also use AI-assisted tooling to move faster on repetitive work, while keeping the same quality bar on everything that ships.
 
-## Career & education
+## Career & Education
 
 <ol class="timeline">
 {% for job in site.data.experience %}
@@ -30,6 +30,43 @@ I care about systems that are predictable, well-instrumented, and easy for the n
   </li>
 {% endfor %}
 </ol>
+
+<h2 id="badges-certificates">Badges &amp; Certificates</h2>
+
+<div class="badge-grid">
+  <a class="badge-card" href="https://academy.claude.com/verify/8114a29bb79f6dd098538da4197237f7" target="_blank" rel="noopener">
+    <picture>
+      <source type="image/webp" srcset="{{ '/assets/images/badge-claude-101-440.webp' | relative_url }} 440w, {{ '/assets/images/badge-claude-101-880.webp' | relative_url }} 880w" sizes="(max-width:767px) 45vw, 220px">
+      <img src="{{ '/assets/images/badge-claude-101-440.jpg' | relative_url }}" srcset="{{ '/assets/images/badge-claude-101-440.jpg' | relative_url }} 440w, {{ '/assets/images/badge-claude-101-880.jpg' | relative_url }} 880w" sizes="(max-width:767px) 45vw, 220px" alt="Claude 101 course completion badge from Claude Academy" class="badge-image" width="440" height="300" loading="lazy" decoding="async">
+    </picture>
+    <span class="badge-meta">
+      <span class="badge-title">Claude 101</span>
+      <span class="badge-issuer">Claude Academy &middot; October 2026</span>
+      <span class="badge-verify">Verify badge &rarr;</span>
+    </span>
+  </a>
+  <a class="badge-card" href="https://academy.claude.com/verify/e1249aeabaf347ab41ed31367358b1a6" target="_blank" rel="noopener">
+    <picture>
+      <source type="image/webp" srcset="{{ '/assets/images/badge-claude-code-101-440.webp' | relative_url }} 440w, {{ '/assets/images/badge-claude-code-101-880.webp' | relative_url }} 880w" sizes="(max-width:767px) 45vw, 220px">
+      <img src="{{ '/assets/images/badge-claude-code-101-440.jpg' | relative_url }}" srcset="{{ '/assets/images/badge-claude-code-101-440.jpg' | relative_url }} 440w, {{ '/assets/images/badge-claude-code-101-880.jpg' | relative_url }} 880w" sizes="(max-width:767px) 45vw, 220px" alt="Claude Code 101 course completion badge from Claude Academy" class="badge-image" width="440" height="300" loading="lazy" decoding="async">
+    </picture>
+    <span class="badge-meta">
+      <span class="badge-title">Claude Code 101</span>
+      <span class="badge-issuer">Claude Academy &middot; October 2026</span>
+      <span class="badge-verify">Verify badge &rarr;</span>
+    </span>
+  </a>
+  <a class="badge-card" href="https://www.hackerrank.com/profile/milanda_wijekoon" target="_blank" rel="noopener">
+    <span class="badge-placeholder badge-logo">
+      <img src="{{ '/assets/images/hackerrank.svg' | relative_url }}" alt="HackerRank" width="722" height="77" loading="lazy" decoding="async">
+    </span>
+    <span class="badge-meta">
+      <span class="badge-title">Coding profile</span>
+      <span class="badge-issuer">@milanda_wijekoon</span>
+      <span class="badge-verify">View profile &rarr;</span>
+    </span>
+  </a>
+</div>
 
 <h2 id="toolkit">Toolkit</h2>
 
