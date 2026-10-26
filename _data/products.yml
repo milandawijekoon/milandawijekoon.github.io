@@ -1,0 +1,11 @@
+- slug: shelfie
+  name: Shelfie Home Library
+  label: Desktop app
+  version: v1.1.2
+  tagline: Catalogue the books you own by scanning their barcodes.
+  desc: >-
+    A simple desktop app for your home library. Scan a barcode or type an
+    ISBN and the title, author and cover are filled in for you. Everything
+    stays on your computer.
+  tags: [macOS, Windows, Free, Offline-first, No tracking]
+  url: /products/shelfie/

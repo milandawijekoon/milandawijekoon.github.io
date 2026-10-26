@@ -719,3 +719,63 @@ footer.site-footer{border-top:1px solid var(--border);padding:40px max(4%,24px);
   font-size:1.2rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;
   color:var(--accent-strong);background:rgba(37,99,235,0.12);padding:6px 14px;border-radius:999px;
 }
+
+/* ---------- products ---------- */
+.product-card{
+  display:grid;grid-template-columns:1.2fr 1fr;gap:0;align-items:stretch;color:inherit;
+  border:1px solid var(--border);border-radius:18px;overflow:hidden;background:var(--surface);
+  transition:border-color .15s ease,transform .15s ease;
+}
+.product-card:hover{border-color:var(--accent);transform:translateY(-2px);color:inherit;}
+.product-card-media{display:block;background:var(--lightgrey);border-right:1px solid var(--border);}
+.product-card-media img{width:100%;height:100%;object-fit:cover;object-position:top left;}
+.product-card-body{display:flex;flex-direction:column;gap:12px;padding:36px;}
+.product-card-top{display:flex;align-items:center;gap:12px;flex-wrap:wrap;}
+.product-card-top .project-badge{margin-left:auto;}
+.product-card-title{margin:0;font-size:3rem;font-weight:800;letter-spacing:-0.025em;line-height:1.15;}
+.product-card .project-link{margin-top:auto;padding-top:8px;}
+.product-icon{width:48px;height:48px;border-radius:11px;}
+.product-icon.lg{width:72px;height:72px;border-radius:16px;box-shadow:0 8px 24px rgba(15,23,42,0.18);}
+.shelfie-title-row{display:flex;align-items:center;gap:20px;flex-wrap:wrap;}
+.product-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px;}
+.product-meta{display:flex;flex-wrap:wrap;gap:6px 22px;margin:22px 0 0;padding:0;font-family:var(--font-mono);font-size:1.3rem;color:var(--secondary-text);}
+.product-meta span+span::before{content:"·";margin-right:22px;color:var(--border);}
+.product-shot{margin:0;border:1px solid var(--border);border-radius:16px;overflow:hidden;background:var(--surface);box-shadow:0 24px 60px rgba(15,23,42,0.12);}
+.product-shot img{width:100%;height:auto;}
+.product-shot figcaption{padding:12px 18px;font-size:1.4rem;color:var(--secondary-text);border-top:1px solid var(--border);}
+.shot-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;}
+.product-note{margin:20px 0 0;font-size:1.4rem;color:var(--secondary-text);}
+.feature-grid .mini-card{gap:8px;}
+.download-lede{margin:0 0 24px;font-size:1.7rem;color:var(--midgrey);}
+.download-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px;}
+.download-card{
+  display:flex;flex-direction:column;gap:4px;padding:26px 28px;color:inherit;
+  border:1px solid var(--border);border-radius:14px;background:var(--surface);
+  transition:border-color .15s ease,transform .15s ease;
+}
+.download-card:hover{border-color:var(--accent);transform:translateY(-2px);color:inherit;}
+.download-card.is-recommended{border-color:var(--accent);box-shadow:0 0 0 1px var(--accent);}
+.download-card.is-recommended::after{
+  content:"Matches your computer";margin-top:8px;font-size:1.2rem;font-weight:600;color:var(--accent-strong);
+}
+.download-name{font-size:2.2rem;font-weight:800;letter-spacing:-0.02em;}
+.download-sub{font-size:1.4rem;color:var(--secondary-text);}
+.download-card .project-link{margin-top:10px;}
+.install-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;align-items:start;}
+.steps{margin:12px 0 0;padding-left:22px;font-size:1.5rem;line-height:1.65;color:var(--midgrey);}
+.steps li{margin-bottom:10px;}
+.steps code,.privacy-list code{font-family:var(--font-mono);font-size:1.3rem;background:var(--code-bg);color:var(--code-fg);padding:2px 6px;border-radius:5px;overflow-wrap:anywhere;}
+.cmd{margin:10px 0;padding:14px 16px;background:var(--code-bg);border-radius:8px;overflow-x:auto;}
+.cmd code{padding:0;background:none;white-space:pre;}
+.privacy-list{margin:20px 0 0;padding-left:22px;max-width:720px;color:var(--midgrey);line-height:1.7;}
+.privacy-list li{margin-bottom:10px;}
+@media (max-width:900px){
+  .product-card{grid-template-columns:1fr;}
+  .product-card-media{border-right:0;border-bottom:1px solid var(--border);}
+  .install-grid,.shot-grid{grid-template-columns:1fr;}
+}
+@media (max-width:767px){
+  .product-card-body{padding:24px;}
+  .product-card-title{font-size:2.4rem;}
+  .product-actions .btn{width:100%;justify-content:center;}
+}

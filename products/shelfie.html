@@ -1,0 +1,147 @@
+---
+layout: default
+title: Shelfie Home Library
+short_title: Shelfie Home Library, a free desktop app for your books
+permalink: /products/shelfie/
+description: Shelfie Home Library is a free desktop app for macOS and Windows. Scan a book's barcode to catalogue your home library. No accounts, no tracking, your data stays on your computer.
+repo: https://github.com/milandawijekoon/home_library
+release: v1.1.2
+dl: https://github.com/milandawijekoon/home_library/releases/latest/download
+---
+<main id="top">
+  <section class="page-hero outer">
+    <div class="inner wide">
+      <p class="page-eyebrow"><a href="{{ '/products/' | relative_url }}">Products</a> / Shelfie</p>
+      <div class="shelfie-title-row">
+        <img class="product-icon lg" src="{{ '/assets/images/shelfie/icon-256.webp' | relative_url }}" alt="" width="72" height="72" />
+        <h1 class="page-title" style="margin:0;">Shelfie Home Library</h1>
+      </div>
+      <p class="page-lede" style="margin-top:18px;">Scan a barcode, and your book is catalogued. A simple, private desktop app for the books you own.</p>
+      <div class="product-actions">
+        <a class="btn btn-primary" href="#download">Download for free</a>
+        <a class="btn btn-outline" href="{{ page.repo }}" target="_blank" rel="noopener">View on GitHub &nearr;</a>
+      </div>
+      <p class="product-meta"><span>Version {{ page.release }}</span><span>macOS &amp; Windows</span><span>Free</span><span>No account needed</span></p>
+    </div>
+  </section>
+
+  <section class="section outer" style="padding-top:8px;">
+    <div class="inner wide">
+      <figure class="product-shot">
+        <img src="{{ '/assets/images/shelfie/library-grid.webp' | relative_url }}" alt="Shelfie Home Library showing a library as a grid of book covers, with search, filters and sorting" width="1200" height="900" fetchpriority="high" />
+      </figure>
+    </div>
+  </section>
+
+  <section class="section alt outer" id="features">
+    <div class="inner wide">
+      <div class="section-head"><h2 class="section-title">Everything a home library needs</h2></div>
+      <div class="mini-grid feature-grid">
+        <div class="mini-card"><h3 class="service-title">Scan to add</h3><p class="service-desc">Point your camera at a book's barcode, or type the ISBN. Duplicates are caught: scanning a book you already own opens its existing entry.</p></div>
+        <div class="mini-card"><h3 class="service-title">Details filled in</h3><p class="service-desc">Title, authors, publisher, description, categories and cover are looked up for you, and you can edit them before saving.</p></div>
+        <div class="mini-card"><h3 class="service-title">Add by hand</h3><p class="service-desc">No barcode or online record? Enter the book manually. Only an ISBN and a title are required.</p></div>
+        <div class="mini-card"><h3 class="service-title">Cover photos</h3><p class="service-desc">Photograph a book's cover and the app straightens and crops it for you.</p></div>
+        <div class="mini-card"><h3 class="service-title">Find things fast</h3><p class="service-desc">Search by title, author, ISBN, publisher or category. Filter by category, language or read status, sort, and switch between grid and list.</p></div>
+        <div class="mini-card"><h3 class="service-title">Reading &amp; lending</h3><p class="service-desc">Mark books as read and see your totals. Note who you have lent a book to.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section outer">
+    <div class="inner wide">
+      <div class="section-head"><h2 class="section-title">A closer look</h2></div>
+      <div class="shot-grid">
+        <figure class="product-shot"><img src="{{ '/assets/images/shelfie/book-details.webp' | relative_url }}" alt="Details of a single book with ISBN, publisher, pages, status, and lend, edit and delete actions" width="1200" height="900" loading="lazy" /><figcaption>Book details, reading status and lending</figcaption></figure>
+        <figure class="product-shot"><img src="{{ '/assets/images/shelfie/library-list.webp' | relative_url }}" alt="The library shown as a compact list" width="1200" height="900" loading="lazy" /><figcaption>List view for larger collections</figcaption></figure>
+      </div>
+      <p class="product-note">Screenshots show sample books only.</p>
+    </div>
+  </section>
+
+  <section class="section alt outer" id="download">
+    <div class="inner wide">
+      <div class="section-head"><h2 class="section-title">Download</h2><span class="project-badge">Latest: {{ page.release }}</span></div>
+      <p class="download-lede">These links always fetch the newest published release.</p>
+      <div class="download-grid">
+        <a class="download-card" data-os="mac" href="{{ page.dl }}/Shelfie-mac-arm64.dmg" rel="noopener">
+          <span class="project-label">macOS</span>
+          <span class="download-name">Apple silicon</span>
+          <span class="download-sub">M1 and newer &middot; .dmg &middot; ~125 MB</span>
+          <span class="project-link">Download &darr;</span>
+        </a>
+        <a class="download-card" data-os="mac" href="{{ page.dl }}/Shelfie-mac-x64.dmg" rel="noopener">
+          <span class="project-label">macOS</span>
+          <span class="download-name">Intel</span>
+          <span class="download-sub">Intel Macs &middot; .dmg &middot; ~130 MB</span>
+          <span class="project-link">Download &darr;</span>
+        </a>
+        <a class="download-card" data-os="win" href="{{ page.dl }}/Shelfie-Setup-win-x64.exe" rel="noopener">
+          <span class="project-label">Windows</span>
+          <span class="download-name">64-bit installer</span>
+          <span class="download-sub">Windows &middot; .exe &middot; ~124 MB</span>
+          <span class="project-link">Download &darr;</span>
+        </a>
+      </div>
+      <p class="product-note">Not sure which Mac you have? Open the Apple menu, then <strong>About This Mac</strong>. &ldquo;Apple M&hellip;&rdquo; means Apple silicon; &ldquo;Intel&rdquo; means Intel. Checksums are in <a href="{{ page.repo }}/releases/latest" target="_blank" rel="noopener">SHA256SUMS.txt on the release page</a>.</p>
+    </div>
+  </section>
+
+  <section class="section outer" id="install">
+    <div class="inner wide">
+      <div class="section-head"><h2 class="section-title">Install &amp; first run</h2></div>
+      <div class="install-grid">
+        <div class="project-card">
+          <h3 class="project-title">macOS</h3>
+          <ol class="steps">
+            <li>Open the <code>.dmg</code> and drag <strong>Shelfie Home Library</strong> into <strong>Applications</strong>.</li>
+            <li>The app is not yet signed by Apple. The first time, right-click it, choose <strong>Open</strong>, then confirm.</li>
+            <li>If macOS says the app is &ldquo;damaged and can't be opened&rdquo;, it is not damaged. macOS flags downloaded unsigned apps. Click <strong>Cancel</strong>, open Terminal and run:
+              <pre class="cmd"><code>xattr -cr "/Applications/Shelfie Home Library.app"</code></pre>
+              This only removes the quarantine flag from this one app and does not touch your books. Then open the app again.</li>
+          </ol>
+        </div>
+        <div class="project-card">
+          <h3 class="project-title">Windows</h3>
+          <ol class="steps">
+            <li>Run the downloaded <code>.exe</code> and follow the installer.</li>
+            <li>If Windows SmartScreen warns that the app is unrecognised, choose <strong>More info</strong>, then <strong>Run anyway</strong>.</li>
+          </ol>
+          <h3 class="project-title" style="margin-top:20px;">Using it</h3>
+          <ol class="steps">
+            <li>Click <strong>Scan ISBN</strong> and allow camera access, or type the ISBN. Barcodes on the back cover start with 978 or 979.</li>
+            <li>Check the details, edit if you like, then click <strong>Add to My Library</strong>.</li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section alt outer" id="privacy">
+    <div class="inner wide">
+      <div class="section-head"><h2 class="section-title">Private by design</h2></div>
+      <p class="download-lede" style="max-width:720px;">Shelfie does not collect any user data. There are no accounts, no analytics and no tracking. Your library is stored only on your own computer and is never uploaded anywhere.</p>
+      <ul class="privacy-list">
+        <li><strong>Where your data lives:</strong> <code>~/Library/Application Support/HomeLibrary</code> on macOS, <code>%APPDATA%\HomeLibrary</code> on Windows.</li>
+        <li><strong>Network use:</strong> only book lookups by ISBN (Google Books, with Open Library as a fallback) and checks for new app versions. The app updates itself in the background and offers to restart.</li>
+        <li><strong>Uninstalling</strong> does not delete your library. Remove the folder above if you want it gone.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section outer">
+    <div class="inner wide">
+      <div class="coming-soon-banner">
+        <span class="coming-soon-badge">Feedback</span>
+        <p>Found a bug or have an idea? <a href="{{ page.repo }}/issues" target="_blank" rel="noopener">Open an issue on GitHub</a> or <a href="{{ '/contact/' | relative_url }}">get in touch</a>.</p>
+      </div>
+    </div>
+  </section>
+</main>
+<script>
+(function(){
+  var p=(navigator.userAgentData&&navigator.userAgentData.platform)||navigator.platform||"";
+  var os=/mac/i.test(p)?"mac":/win/i.test(p)?"win":"";
+  if(!os)return;
+  document.querySelectorAll('.download-card[data-os="'+os+'"]').forEach(function(c){c.classList.add("is-recommended");});
+})();
+</script>
