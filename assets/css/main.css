@@ -709,3 +709,13 @@ footer.site-footer{border-top:1px solid var(--border);padding:40px max(4%,24px);
 .hero-photo{width:380px;height:380px;}
 @media (max-width:1180px){.hero-photo{width:280px;height:280px;}}
 @media (max-width:480px){.hero-photo{width:220px;height:220px;}}
+.coming-soon-banner{
+  display:flex;align-items:center;gap:16px;flex-wrap:wrap;padding:24px 28px;
+  border:1px solid var(--border);border-left:4px solid var(--accent);border-radius:10px;
+  background:rgba(37,99,235,0.06);
+}
+.coming-soon-banner p{margin:0;font-size:1.6rem;flex:1;min-width:240px;}
+.coming-soon-badge{
+  font-size:1.2rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;
+  color:var(--accent-strong);background:rgba(37,99,235,0.12);padding:6px 14px;border-radius:999px;
+}
