@@ -30,34 +30,117 @@ layout: default
         {% endfor %}
       </div>
       <p class="post-feed-empty" id="post-feed-empty" hidden>No posts in this category yet.</p>
+      <nav class="pagination" id="pagination" aria-label="Blog pagination" hidden></nav>
     </div>
   </section>
 </main>
 
 <script>
 (function () {
+  var PAGE_SIZE = 10;
   var filterList = document.getElementById('category-filter');
-  var posts = document.querySelectorAll('#post-feed .post-card');
+  var posts = Array.prototype.slice.call(document.querySelectorAll('#post-feed .post-card'));
   var emptyState = document.getElementById('post-feed-empty');
-  if (!filterList) return;
+  var pager = document.getElementById('pagination');
+  var feed = document.getElementById('post-feed');
+  if (!filterList || !pager) return;
+
+  var filter = 'all';
+  var page = 1;
+
+  var params = new URLSearchParams(window.location.search);
+  var initialFilter = params.get('category');
+  if (initialFilter && filterList.querySelector('[data-filter="' + CSS.escape(initialFilter) + '"]')) {
+    filter = initialFilter;
+  }
+  page = parseInt(params.get('page'), 10) || 1;
+
+  function matching() {
+    return posts.filter(function (post) {
+      return filter === 'all' || post.getAttribute('data-category') === filter;
+    });
+  }
+
+  function pageButton(label, target, opts) {
+    var btn = document.createElement('button');
+    btn.type = 'button';
+    btn.className = 'pagination-btn' + (opts && opts.active ? ' is-active' : '');
+    btn.textContent = label;
+    if (opts && opts.aria) btn.setAttribute('aria-label', opts.aria);
+    if (opts && opts.active) btn.setAttribute('aria-current', 'page');
+    if (opts && opts.disabled) btn.disabled = true;
+    btn.addEventListener('click', function () { go(target, true); });
+    return btn;
+  }
+
+  function gap() {
+    var span = document.createElement('span');
+    span.className = 'pagination-gap';
+    span.textContent = '\u2026';
+    return span;
+  }
+
+  function renderPager(total) {
+    pager.innerHTML = '';
+    pager.hidden = total <= 1;
+    if (total <= 1) return;
+
+    pager.appendChild(pageButton('Prev', page - 1, { disabled: page === 1, aria: 'Previous page' }));
+    var last = 0;
+    for (var i = 1; i <= total; i++) {
+      if (i === 1 || i === total || Math.abs(i - page) <= 1) {
+        if (last && i - last > 1) pager.appendChild(gap());
+        pager.appendChild(pageButton(String(i), i, { active: i === page, aria: 'Page ' + i }));
+        last = i;
+      }
+    }
+    pager.appendChild(pageButton('Next', page + 1, { disabled: page === total, aria: 'Next page' }));
+  }
+
+  function render() {
+    var items = matching();
+    var total = Math.max(1, Math.ceil(items.length / PAGE_SIZE));
+    page = Math.min(Math.max(page, 1), total);
+    var start = (page - 1) * PAGE_SIZE;
+
+    posts.forEach(function (post) { post.hidden = true; });
+    items.slice(start, start + PAGE_SIZE).forEach(function (post) { post.hidden = false; });
+    emptyState.hidden = items.length !== 0;
+    renderPager(total);
+  }
+
+  function syncUrl() {
+    var q = new URLSearchParams();
+    if (filter !== 'all') q.set('category', filter);
+    if (page > 1) q.set('page', page);
+    var qs = q.toString();
+    history.replaceState(null, '', window.location.pathname + (qs ? '?' + qs : ''));
+  }
+
+  function go(target, scroll) {
+    page = target;
+    render();
+    syncUrl();
+    if (scroll) feed.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+
+  function setActiveChip() {
+    filterList.querySelectorAll('.filter-chip').forEach(function (chip) {
+      chip.classList.toggle('is-active', chip.getAttribute('data-filter') === filter);
+    });
+  }
 
   filterList.addEventListener('click', function (event) {
     var button = event.target.closest('.filter-chip');
     if (!button) return;
-
-    filterList.querySelectorAll('.filter-chip').forEach(function (chip) {
-      chip.classList.remove('is-active');
-    });
-    button.classList.add('is-active');
-
-    var filter = button.getAttribute('data-filter');
-    var visibleCount = 0;
-    posts.forEach(function (post) {
-      var match = filter === 'all' || post.getAttribute('data-category') === filter;
-      post.hidden = !match;
-      if (match) visibleCount++;
-    });
-    emptyState.hidden = visibleCount !== 0;
+    filter = button.getAttribute('data-filter');
+    page = 1;
+    setActiveChip();
+    render();
+    syncUrl();
   });
+
+  setActiveChip();
+  render();
 })();
 </script>
