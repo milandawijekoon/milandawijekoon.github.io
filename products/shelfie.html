@@ -16,12 +16,12 @@ dl: https://github.com/milandawijekoon/home_library/releases/latest/download
         <img class="product-icon lg" src="{{ '/assets/images/shelfie/icon-256.webp' | relative_url }}" alt="" width="72" height="72" />
         <h1 class="page-title" style="margin:0;">Shelfie Home Library</h1>
       </div>
-      <p class="page-lede" style="margin-top:18px;">Scan a barcode, and your book is catalogued. A simple, private desktop app for the books you own.</p>
+      <p class="page-lede" style="margin-top:18px;">Scan a barcode, and your book is catalogued. A free, private app for Mac and Windows that keeps a neat catalogue of every book you own.</p>
       <div class="product-actions">
         <a class="btn btn-primary" href="#download">Download for free</a>
         <a class="btn btn-outline" href="{{ page.repo }}" target="_blank" rel="noopener">View on GitHub &nearr;</a>
       </div>
-      <p class="product-meta"><span>Version {{ page.release }}</span><span>macOS &amp; Windows</span><span>Free</span><span>No account needed</span></p>
+      <p class="product-meta"><span>Version {{ page.release }}</span><span>macOS &amp; Windows</span><span>Free &amp; open source</span><span>No account needed</span></p>
     </div>
   </section>
 
@@ -47,14 +47,42 @@ dl: https://github.com/milandawijekoon/home_library/releases/latest/download
     </div>
   </section>
 
-  <section class="section outer">
+  <section class="section outer" id="how-it-works">
     <div class="inner wide">
-      <div class="section-head"><h2 class="section-title">A closer look</h2></div>
-      <div class="shot-grid">
-        <figure class="product-shot"><img src="{{ '/assets/images/shelfie/book-details.webp' | relative_url }}" alt="Details of a single book with ISBN, publisher, pages, status, and lend, edit and delete actions" width="1200" height="900" loading="lazy" /><figcaption>Book details, reading status and lending</figcaption></figure>
-        <figure class="product-shot"><img src="{{ '/assets/images/shelfie/library-list.webp' | relative_url }}" alt="The library shown as a compact list" width="1200" height="900" loading="lazy" /><figcaption>List view for larger collections</figcaption></figure>
+      <div class="section-head"><h2 class="section-title">How it works</h2></div>
+      <div class="walk-row">
+        <div class="walk-text"><span class="walk-step">Step 1</span><h3 class="project-title">Start with an empty shelf</h3><p class="project-desc">The first time you open Shelfie your library is empty. Add your first book by scanning it or typing it in.</p></div>
+        <figure class="product-shot"><img src="{{ '/assets/images/shelfie/empty-library.webp' | relative_url }}" alt="The empty library shown on first start" width="1200" height="900" loading="lazy" /></figure>
       </div>
-      <p class="product-note">Screenshots show sample books only.</p>
+      <div class="walk-row rev">
+        <div class="walk-text"><span class="walk-step">Step 2</span><h3 class="project-title">Scan a barcode</h3><p class="project-desc">Hold the barcode on the back cover (starting with 978 or 979) up to the camera. No camera? Type the ISBN and click Look up.</p></div>
+        <figure class="product-shot"><img src="{{ '/assets/images/shelfie/scan-isbn.webp' | relative_url }}" alt="The Scan ISBN window with the camera pointed at a barcode and a box to type the ISBN" width="1200" height="900" loading="lazy" /></figure>
+      </div>
+      <div class="walk-row">
+        <div class="walk-text"><span class="walk-step">Step 3</span><h3 class="project-title">Check, edit, or add by hand</h3><p class="project-desc">Review what was found and fix anything before saving. Books without a barcode can be typed in. Only the title and ISBN are required.</p></div>
+        <figure class="product-shot"><img src="{{ '/assets/images/shelfie/add-book.webp' | relative_url }}" alt="The Add Book form with title, author, ISBN and cover photo fields" width="1200" height="900" loading="lazy" /></figure>
+      </div>
+      <div class="walk-row rev">
+        <div class="walk-text"><span class="walk-step">Step 4</span><h3 class="project-title">Open any book</h3><p class="project-desc">See the full details, mark it as read or not read, edit it, or delete it after a confirmation.</p></div>
+        <figure class="product-shot"><img src="{{ '/assets/images/shelfie/book-details.webp' | relative_url }}" alt="Details of a single book with ISBN, publisher, status, and lend, edit and delete actions" width="1200" height="900" loading="lazy" /></figure>
+      </div>
+      <div class="walk-row">
+        <div class="walk-text"><span class="walk-step">Step 5</span><h3 class="project-title">Lend a book to a friend</h3><p class="project-desc">Note who has borrowed a book and when. Mark it returned later, and filter by Lent out to see everything that is currently away.</p></div>
+        <figure class="product-shot"><img src="{{ '/assets/images/shelfie/lend-book.webp' | relative_url }}" alt="The Lend this book window asking who is borrowing and the date" width="1200" height="900" loading="lazy" /></figure>
+      </div>
+      <div class="walk-row rev">
+        <div class="walk-text"><span class="walk-step">Step 6</span><h3 class="project-title">Find any book fast</h3><p class="project-desc">Search by title, author, publisher, category or number. Filter by category, language or status, and sort by date, title, author or publication date.</p></div>
+        <figure class="product-shot"><img src="{{ '/assets/images/shelfie/search.webp' | relative_url }}" alt="Searching the library, narrowing the list as you type" width="1200" height="900" loading="lazy" /></figure>
+      </div>
+      <div class="walk-row">
+        <div class="walk-text"><span class="walk-step">Step 7</span><h3 class="project-title">Grid or list</h3><p class="project-desc">Switch between a grid of covers and a compact list for larger collections.</p></div>
+        <figure class="product-shot"><img src="{{ '/assets/images/shelfie/library-list.webp' | relative_url }}" alt="The library shown as a compact list" width="1200" height="900" loading="lazy" /></figure>
+      </div>
+      <div class="walk-row rev">
+        <div class="walk-text"><span class="walk-step">Step 8</span><h3 class="project-title">Light and dark</h3><p class="project-desc">Switch between light and dark with the moon button at the top right.</p></div>
+        <figure class="product-shot"><img src="{{ '/assets/images/shelfie/dark-mode.webp' | relative_url }}" alt="The library in dark mode" width="1200" height="900" loading="lazy" /></figure>
+      </div>
+      <p class="product-note">Screenshots show sample books only. Cover images are from <a href="https://openlibrary.org" target="_blank" rel="noopener">Open Library</a> and belong to their respective authors and publishers.</p>
     </div>
   </section>
 
@@ -112,6 +140,20 @@ dl: https://github.com/milandawijekoon/home_library/releases/latest/download
             <li>Check the details, edit if you like, then click <strong>Add to My Library</strong>.</li>
           </ol>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section outer" id="faq">
+    <div class="inner wide">
+      <div class="section-head"><h2 class="section-title">Questions &amp; answers</h2></div>
+      <div class="faq">
+        <details><summary>Does it cost anything?</summary><p>No. Shelfie is free and open source under the MIT License.</p></details>
+        <details><summary>Do I need the internet?</summary><p>Only to look up a book's details and cover when you add it, and to check for updates. Browsing, searching and editing your books works offline.</p></details>
+        <details><summary>How do I back up my library?</summary><p>There is no export button. Close the app and copy the data folder (see Private by design below) to a USB stick or cloud drive. To restore, copy the files back.</p></details>
+        <details><summary>Can two computers share one library?</summary><p>Not automatically. Each computer keeps its own library.</p></details>
+        <details><summary>Does it update itself?</summary><p>Yes. It checks in the background and offers to restart when a new version is ready. On a Mac, if an update can't install by itself, Shelfie opens the download page.</p></details>
+        <details><summary>Windows says &ldquo;Smart App Control blocked an app&rdquo;</summary><p>Smart App Control has no &ldquo;Run anyway&rdquo; button. To continue, open Windows Security, then App &amp; browser control, then Smart App Control settings, and choose Off. Windows will not let you turn it back on without resetting the PC, so only do this if you are comfortable with that.</p></details>
       </div>
     </div>
   </section>
