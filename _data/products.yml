@@ -9,3 +9,20 @@
     stays on your computer.
   tags: [macOS, Windows, Free, Offline-first, No tracking]
   url: /products/shelfie/
+  image: /assets/images/shelfie/library-grid.webp
+  icon: /assets/images/shelfie/icon-256.webp
+  alt: Shelfie Home Library showing a grid of book covers
+- slug: expense-assistant
+  name: Smart Expense Assistant
+  label: Web app
+  version: Open source
+  tagline: Type what you spent and let AI do the bookkeeping.
+  desc: >-
+    Describe an expense the way you'd say it and the amount, category, shop
+    and date are filled in for you. See where your money goes and ask
+    questions in plain English. Runs on your own computer.
+  tags: [AI-assisted, Docker, Free, Self-hosted, Bring your own AI key]
+  url: /products/expense-assistant/
+  image: /assets/images/expense/dashboard.webp
+  icon: /assets/images/expense/icon.svg
+  alt: Smart Expense Assistant dashboard with spending totals and charts

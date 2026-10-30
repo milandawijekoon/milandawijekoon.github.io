@@ -5,7 +5,7 @@ permalink: /products/
 eyebrow: Products
 lede: >-
   Small, focused software I build for everyday use.
-description: Products by Milanda Wijekoon, including Shelfie Home Library, a free desktop app for cataloguing the books you own.
+description: Products by Milanda Wijekoon, including Shelfie Home Library, a desktop app for cataloguing your books, and Smart Expense Assistant, an AI expense tracker.
 ---
 <main id="top">
   <section class="page-hero outer">
@@ -20,12 +20,11 @@ description: Products by Milanda Wijekoon, including Shelfie Home Library, a fre
       {% for product in site.data.products %}
       <a class="product-card" href="{{ product.url | relative_url }}">
         <picture class="product-card-media">
-          <source type="image/webp" srcset="{{ '/assets/images/shelfie/library-grid.webp' | relative_url }}" />
-          <img src="{{ '/assets/images/shelfie/library-grid.webp' | relative_url }}" alt="Shelfie Home Library showing a grid of book covers" width="1200" height="900" loading="lazy" />
+          <img src="{{ product.image | relative_url }}" alt="{{ product.alt }}" width="1200" height="900" loading="lazy" />
         </picture>
         <div class="product-card-body">
           <div class="product-card-top">
-            <img class="product-icon" src="{{ '/assets/images/shelfie/icon-256.webp' | relative_url }}" alt="" width="48" height="48" />
+            <img class="product-icon" src="{{ product.icon | relative_url }}" alt="" width="48" height="48" />
             <span class="project-label">{{ product.label }}</span>
             <span class="project-badge">{{ product.version }}</span>
           </div>
