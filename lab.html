@@ -1,0 +1,47 @@
+---
+layout: default
+title: Lab
+permalink: /lab/
+eyebrow: Lab
+lede: >-
+  Small, focused software I build and experiment with for everyday use.
+description: The Lab by Milanda Wijekoon, featuring Shelfie Home Library, a desktop app for cataloguing your books, and Smart Expense Assistant, an AI expense tracker.
+---
+<main id="top">
+  <section class="page-hero lab-hero outer">
+    <div class="inner wide">
+      <p class="page-eyebrow">{{ page.eyebrow }}</p>
+      <h1 class="page-title">Things I build for everyday use.</h1>
+      <p class="page-lede">{{ page.lede }}</p>
+    </div>
+  </section>
+  <section class="section outer lab-section">
+    <div class="inner wide">
+      {% for product in site.data.lab %}
+      {% assign flip = forloop.index0 | modulo: 2 %}
+      <a class="lab-item{% if flip == 1 %} lab-item-flip{% endif %}" href="{{ product.url | relative_url }}">
+        <div class="lab-copy">
+          <span class="lab-index">{% if forloop.index < 10 %}0{% endif %}{{ forloop.index }}</span>
+          <div class="lab-meta">
+            <img class="product-icon" src="{{ product.icon | relative_url }}" alt="" width="48" height="48" />
+            <span class="project-label">{{ product.label }}</span>
+            <span class="lab-version">{{ product.version }}</span>
+          </div>
+          <h2 class="lab-title">{{ product.name }}</h2>
+          <p class="lab-tagline">{{ product.tagline }}</p>
+          <p class="lab-desc">{{ product.desc }}</p>
+          <p class="lab-tags">{{ product.tags | join: " · " }}</p>
+          <span class="lab-link">View details <span aria-hidden="true">&rarr;</span></span>
+        </div>
+        <picture class="lab-media">
+          <img src="{{ product.image | relative_url }}" alt="{{ product.alt }}" width="1200" height="900" loading="lazy" />
+        </picture>
+      </a>
+      {% endfor %}
+      <div class="lab-more" role="status">
+        <span class="lab-more-rule" aria-hidden="true"></span>
+        <p>More experiments are on the way. <a href="{{ site.author.linkedin }}" target="_blank" rel="noopener">Get in touch</a> to hear when they launch.</p>
+      </div>
+    </div>
+  </section>
+</main>

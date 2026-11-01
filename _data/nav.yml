@@ -2,10 +2,10 @@
   url: /
 - title: Services
   url: /services/
-- title: Products
-  url: /products/
 - title: Blog
   url: /blog/
+- title: Lab
+  url: /lab/
 - title: About
   url: /about/
 - title: Contact
