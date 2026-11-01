@@ -41,7 +41,7 @@
 {% if site.adsense.client != "" %}
 <meta name="google-adsense-account" content="{{ site.adsense.client }}" />
 {% endif %}
-{% if page.layout == "post" and site.adsense.client != "" %}
+{% if site.adsense.client != "" %}
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client={{ site.adsense.client }}" crossorigin="anonymous"></script>
 {% endif %}
 {% if jekyll.environment == "production" and site.google_analytics != "" %}
