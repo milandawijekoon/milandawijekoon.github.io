@@ -14,9 +14,9 @@ My core stack is PHP/Laravel, Vue.js and Node.js on AWS. Beyond writing code, I 
 ## What I've worked on
 
 - Helped integrate multiple payment gateways, including Payrix, Windcave, Square, Till and Linkly, into OpusPay, a unified payment middleware with real-time transaction processing and per-client gateway configuration that needs no code changes.
-- Contributed to fintech solutions covering web, ACH, QR and terminal payments, and helped implement secure QR payment flows across the company's platforms.
+- Contributed to fintech solutions covering web, ACH and terminal payments, and helped implement secure QR payment flows across the company's platforms.
 - Integrated Avalara tax compliance software, working directly with support teams to resolve integration issues and meet business requirements.
-- Core developer in the migration from Laravel 5.7 to Laravel 10, including version upgrades and issue resolution to stabilise the systems.
+- Core developer in migrating a legacy Laravel application to the latest release. I resolved upgrade issues and stabilised the systems.
 - Fine-tuned the Docker setup for Laravel and Vue.js services, and helped stabilise and optimise performance after the move from a monolithic container to a multi-container architecture.
 - Served as team lead for Byond Market, a no-code marketplace builder, coordinating delivery, release management and production deployments.
 - Contributed to Omnea, a UK marketplace for finding funeral directors and cemeteries, and to a shared UI component library that keeps design consistent across company products.
