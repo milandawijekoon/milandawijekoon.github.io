@@ -1,0 +1,23 @@
+{%- comment -%}
+  Recommendation cards. Params: featured_only (true/false), limit (number).
+{%- endcomment -%}
+{%- assign recs = site.data.recommendations -%}
+{%- if include.featured_only -%}{%- assign recs = recs | where: "featured", true -%}{%- endif -%}
+<div class="rec-grid">
+  {% for rec in recs limit: include.limit %}
+  <figure class="rec-card">
+    <blockquote class="rec-quote">
+      <p class="rec-text">{{ rec.text }}</p>
+      <button class="rec-toggle" type="button" aria-expanded="false" hidden>Read more</button>
+    </blockquote>
+    <figcaption class="rec-author">
+      <span class="rec-avatar" aria-hidden="true">{{ rec.name | slice: 0 }}</span>
+      <span class="rec-meta">
+        <span class="rec-name">{{ rec.name }}</span>
+        <span class="rec-role">{{ rec.title }} &middot; {{ rec.company }}</span>
+        <time class="rec-date" datetime="{{ rec.date | date: '%Y-%m-%d' }}">{{ rec.date | date: "%b %Y" }}</time>
+      </span>
+    </figcaption>
+  </figure>
+  {% endfor %}
+</div>

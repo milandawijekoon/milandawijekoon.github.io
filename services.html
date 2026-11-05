@@ -38,19 +38,4 @@ description: >-
       </div>
     </div>
   </section>
-
-  <section class="section outer alt">
-    <div class="inner">
-      <div class="section-head"><h2 class="section-title">How We&rsquo;d Work Together</h2></div>
-      <div class="process-list">
-        {% for step in site.data.process %}
-        <div class="process-item">
-          <h3>{{ step.title }}</h3>
-          <p>{{ step.desc }}</p>
-        </div>
-        {% endfor %}
-      </div>
-      <p style="margin-top:36px;"><a class="btn btn-primary" href="{{ '/contact/' | relative_url }}">Start a Project &rarr;</a></p>
-    </div>
-  </section>
 </main>

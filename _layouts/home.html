@@ -95,4 +95,14 @@ layout: default
       </div>
     </div>
   </section>
+
+  <section class="section outer alt" id="recommendations">
+    <div class="inner wide">
+      <div class="section-head">
+        <h2 class="section-title">What colleagues say</h2>
+        <a class="section-link" href="{{ '/recommendations/' | relative_url }}">All recommendations &rarr;</a>
+      </div>
+      {% include recommendations.html featured_only=true limit=3 %}
+    </div>
+  </section>
 </main>

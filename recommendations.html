@@ -1,0 +1,28 @@
+---
+layout: default
+title: Recommendations
+permalink: /recommendations/
+eyebrow: Recommendations
+lede: >-
+  Words from colleagues, team members and leaders I've worked with, shared
+  from my LinkedIn profile.
+description: >-
+  Recommendations for Milanda Wijekoon from colleagues, team members and
+  leaders across OpusXenta, Intervest and more.
+---
+<main id="top">
+  <section class="page-hero outer">
+    <div class="inner">
+      <p class="page-eyebrow">{{ page.eyebrow }}</p>
+      <h1 class="page-title">What colleagues say.</h1>
+      <p class="page-lede">{{ page.lede }}</p>
+    </div>
+  </section>
+
+  <section class="section outer" style="padding-top:0;">
+    <div class="inner wide">
+      {% include recommendations.html %}
+      <p class="rec-more"><a class="section-link" href="{{ site.author.linkedin }}/details/recommendations/" target="_blank" rel="noopener">See all on LinkedIn &nearr;</a></p>
+    </div>
+  </section>
+</main>

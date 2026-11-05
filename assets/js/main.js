@@ -1,4 +1,21 @@
 (() => {
+  // Recommendations: clamp long quotes and reveal a "Read more" toggle only when needed
+  document.querySelectorAll(".rec-card").forEach((card) => {
+    const text = card.querySelector(".rec-text");
+    const btn = card.querySelector(".rec-toggle");
+    if (!text || !btn) return;
+    text.classList.add("is-clamped");
+    if (text.scrollHeight <= text.clientHeight + 1) {
+      text.classList.remove("is-clamped");
+      return;
+    }
+    btn.hidden = false;
+    btn.addEventListener("click", () => {
+      const open = text.classList.toggle("is-clamped") === false;
+      btn.setAttribute("aria-expanded", String(open));
+      btn.textContent = open ? "Show less" : "Read more";
+    });
+  });
   // Theme toggle (defaults to system preference until the user chooses)
   const themeBtn = document.querySelector(".theme-toggle");
   if (themeBtn) {
