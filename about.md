@@ -1,23 +1,33 @@
 ---
 layout: page
-title: Senior Software Engineer / Tech Lead
+title: Senior Software Engineer | Tech Lead
 short_title: About Milanda Wijekoon
 permalink: /about/
 eyebrow: About
-lede: >-
-  I've spent 6+ years building software that businesses quietly depend on —
-  payment infrastructure, product platforms, cloud architecture, and the
-  engineering foundations that let teams keep shipping with confidence.
 description: About Milanda Wijekoon, Senior Software Engineer specialising in software architecture, full-stack development, and technical leadership.
 ---
 
-I build software for businesses across a range of industries, with most of my experience in PHP/Laravel systems built for real production load. That covers full-stack engineering, payment gateway integration, cloud infrastructure and technical leadership.
+I'm a Senior Software Engineer based in Colombo, Sri Lanka, with 6+ years of experience building SaaS and fintech platforms. Most of that time has been at OpusXenta (Byond), where I joined as a software engineer in 2020, grew into a senior role and team lead, and contributed to a suite of platforms for the death-care industry along with the payment systems behind them.
 
-Along the way I've integrated multiple payment providers, led large codebase migrations, moved infrastructure from monoliths to containerised multi-service deployments, and helped teams improve code quality, review and release practices.
+My core stack is PHP/Laravel, Vue.js and Node.js on AWS. Beyond writing code, I contribute to architecture decisions, lead delivery and releases, mentor engineers, and troubleshoot complex production issues.
+
+## What I've worked on
+
+- Helped integrate multiple payment gateways, including Payrix, Windcave, Square, Till and Linkly, into OpusPay, a unified payment middleware with real-time transaction processing and per-client gateway configuration that needs no code changes.
+- Contributed to fintech solutions covering web, ACH, QR and terminal payments, and helped implement secure QR payment flows across the company's platforms.
+- Integrated Avalara tax compliance software, working directly with support teams to resolve integration issues and meet business requirements.
+- Core developer in the migration from Laravel 5.7 to Laravel 10, including version upgrades and issue resolution to stabilise the systems.
+- Fine-tuned the Docker setup for Laravel and Vue.js services, and helped stabilise and optimise performance after the move from a monolithic container to a multi-container architecture.
+- Served as team lead for Byond Market, a no-code marketplace builder, coordinating delivery, release management and production deployments.
+- Contributed to Omnea, a UK marketplace for finding funeral directors and cemeteries, and to a shared UI component library that keeps design consistent across company products.
+- Worked as a core member of the SaaS and fintech engineering teams, contributing to architecture decisions across the company's death-care platform suite and payment systems.
+- Helped resolve security vulnerabilities identified through penetration testing.
+- Contributed to replacing legacy Sage CRM functionality with new cemetery mapping and plot and inventory management features.
+- Earlier in my career, built and tested backend services for Avanti, a leading UK travel insurance application (Spring Boot, Hibernate, MySQL), and wrote and tested SQL scripts for a large database migration.
 
 ## How I work
 
-I care about systems that are predictable, well-instrumented, and easy for the next engineer to understand and extend. I also use AI-assisted tooling to move faster on repetitive work, while keeping the same quality bar on everything that ships.
+I care about systems that are predictable, well-instrumented, and easy for the next engineer to understand and extend. In practice that means careful code review, disciplined release management and mentoring, so teams ship with confidence. I also use AI-assisted tools such as Claude Code and GitHub Copilot to move faster on repetitive work, while keeping the same quality bar on everything that ships.
 
 ## Career & Education
 

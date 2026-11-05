@@ -33,21 +33,3 @@
     deliver real productivity gains rather than demos.
   tags: [LLM, Claude, OpenAI, GitHub Copilot, Python]
   icon: bulb
-
-- title: Cloud Architecture & AWS Consulting
-  short: Containerised, scalable infrastructure on AWS with the observability to run it.
-  desc: >-
-    Designing and migrating infrastructure on Raiway / AWS — containerised services,
-    scalable deployments, cost optimisation, and the observability layer that
-    tells you what your system is actually doing.
-  tags: [AWS, Raiway, Docker, CI/CD, System Design]
-  icon: layers
-
-- title: Tech Leadership & Mentoring
-  short: Hands-on technical leadership that helps your team ship with more confidence.
-  desc: >-
-    Embedded technical leadership — code review, architecture guidance, release
-    management, and hands-on mentoring that helps engineering teams ship with
-    more confidence and consistency.
-  tags: [Team Leadership, Code Review, Agile, Mentoring]
-  icon: users
