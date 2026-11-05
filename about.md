@@ -68,7 +68,7 @@ I care about systems that are predictable, well-instrumented, and easy for the n
   </a>
 </div>
 
-<h2 id="toolkit">Toolkit</h2>
+<h2 id="toolkit">Core stack</h2>
 
 <ul class="toolkit">
   <li><span class="stack-tag">PHP</span></li>
@@ -76,7 +76,9 @@ I care about systems that are predictable, well-instrumented, and easy for the n
   <li><span class="stack-tag">JavaScript</span></li>
   <li><span class="stack-tag">TypeScript</span></li>
   <li><span class="stack-tag">Node.js</span></li>
+  <li><span class="stack-tag">Nest.js</span></li>
   <li><span class="stack-tag">Vue.js</span></li>
+  <li><span class="stack-tag">Python</span></li>
   <li><span class="stack-tag">Docker</span></li>
   <li><span class="stack-tag">AWS</span></li>
   <li><span class="stack-tag">SQL</span></li>

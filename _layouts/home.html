@@ -28,10 +28,21 @@ layout: default
     </div>
   </section>
 
+  <section class="highlights outer" aria-label="Highlights">
+    <div class="inner wide">
+      <dl class="highlight-list">
+        <div><dt>6+ years</dt><dd>Building production software</dd></div>
+        <div><dt>Payments &amp; SaaS</dt><dd>Gateway integrations and multi-tenant platforms</dd></div>
+        <div><dt>Node.js &amp; Laravel</dt><dd>With Nest.js, Vue.js and AWS</dd></div>
+      </dl>
+    </div>
+  </section>
+
   <section class="section outer" id="projects">
     <div class="inner wide">
       <div class="section-head">
-        <h2 class="section-title">Featured projects</h2>
+        <div><span class="section-num">01</span>
+        <h2 class="section-title">Featured projects</h2></div>
         <a class="section-link" href="{{ '/projects/' | relative_url }}">All projects &rarr;</a>
       </div>
       <div class="project-grid compact">
@@ -58,7 +69,8 @@ layout: default
   <section class="section outer alt" id="recommendations">
     <div class="inner wide">
       <div class="section-head">
-        <h2 class="section-title">What colleagues say</h2>
+        <div><span class="section-num">02</span>
+        <h2 class="section-title">What colleagues say</h2></div>
         <a class="section-link" href="{{ '/recommendations/' | relative_url }}">All recommendations &rarr;</a>
       </div>
       {% include recommendations.html featured_only=true limit=3 %}
@@ -67,7 +79,8 @@ layout: default
   <section class="section outer">
     <div class="inner wide">
       <div class="section-head">
-        <h2 class="section-title">Services</h2>
+        <div><span class="section-num">03</span>
+        <h2 class="section-title">Services</h2></div>
         <a class="section-link" href="{{ '/services/' | relative_url }}">See all &rarr;</a>
       </div>
       <div class="mini-grid">
@@ -84,7 +97,8 @@ layout: default
   <section class="section outer alt">
     <div class="inner">
       <div class="section-head">
-        <h2 class="section-title">Recent Posts</h2>
+        <div><span class="section-num">04</span>
+        <h2 class="section-title">Recent Posts</h2></div>
         <a class="section-link" href="{{ '/blog/' | relative_url }}">View all posts &rarr;</a>
       </div>
       <div class="post-feed">

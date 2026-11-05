@@ -42,6 +42,10 @@ adsense:
 # `jekyll serve` runs don't count as visits. Leave empty to disable.
 google_analytics: "G-RK9EN2Y436"
 
+# Dark mode is temporarily disabled (site stays light, toggle hidden).
+# Set to true to bring back the toggle and system dark-mode support.
+dark_mode: false
+
 markdown: kramdown
 kramdown:
   input: GFM
