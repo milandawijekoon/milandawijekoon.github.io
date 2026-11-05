@@ -83,5 +83,3 @@ I care about systems that are predictable, well-instrumented, and easy for the n
   <li><span class="stack-tag">MongoDB</span></li>
   <li><span class="stack-tag">AI &amp; LLM Tools</span></li>
 </ul>
-
-<p style="margin-top:36px;"><a class="btn btn-primary" href="/contact/">Get in Touch &rarr;</a></p>

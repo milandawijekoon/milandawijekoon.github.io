@@ -15,16 +15,14 @@ layout: default
         <p class="hero-description">{{ page.hero_description }}</p>
         <div class="hero-action">
           <a class="btn btn-primary" href="#projects">View my work &rarr;</a>
-          <a class="btn btn-outline" href="{{ '/services/' | relative_url }}">Explore Services &rarr;</a>
+          <a class="btn btn-outline" href="{{ '/contact/' | relative_url }}">Get in touch</a>
         </div>
         <div class="hero-stack">
           <span class="stack-tag">PHP</span>
           <span class="stack-tag">Laravel</span>
-          <span class="stack-tag">JavaScript</span>
-          <span class="stack-tag">TypeScript</span>
           <span class="stack-tag">Node.js</span>
           <span class="stack-tag">Vue.js</span>
-          <a class="stack-tag stack-more" href="{{ '/about/#toolkit' | relative_url }}">+5 more</a>
+          <a class="stack-tag stack-more" href="{{ '/about/#toolkit' | relative_url }}">+ more</a>
         </div>
       </div>
     </div>
@@ -55,6 +53,34 @@ layout: default
     </div>
   </section>
 
+
+
+  <section class="section outer alt" id="recommendations">
+    <div class="inner wide">
+      <div class="section-head">
+        <h2 class="section-title">What colleagues say</h2>
+        <a class="section-link" href="{{ '/recommendations/' | relative_url }}">All recommendations &rarr;</a>
+      </div>
+      {% include recommendations.html featured_only=true limit=3 %}
+    </div>
+  </section>
+  <section class="section outer">
+    <div class="inner wide">
+      <div class="section-head">
+        <h2 class="section-title">Services</h2>
+        <a class="section-link" href="{{ '/services/' | relative_url }}">See all &rarr;</a>
+      </div>
+      <div class="mini-grid">
+        {% for service in site.data.services limit:3 %}
+        <a class="mini-card" href="{{ '/services/' | relative_url }}">
+          <span class="service-icon">{% include icon.html name=service.icon %}</span>
+          <h3 class="service-title">{{ service.title }}</h3>
+          <p class="service-desc">{{ service.short }}</p>
+        </a>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
   <section class="section outer alt">
     <div class="inner">
       <div class="section-head">
@@ -71,38 +97,6 @@ layout: default
         </article>
         {% endfor %}
       </div>
-    </div>
-  </section>
-
-  <section class="section outer">
-    <div class="inner wide">
-      <div class="section-head">
-        <h2 class="section-title">Services</h2>
-        <a class="section-link" href="{{ '/services/' | relative_url }}">See all &rarr;</a>
-      </div>
-      <div class="mini-grid">
-        {% for service in site.data.services limit:3 %}
-        <a class="mini-card" href="{{ '/services/' | relative_url }}">
-          <span class="service-icon">{% include icon.html name=service.icon %}</span>
-          <h3 class="service-title">{{ service.title }}</h3>
-          <p class="service-desc">{{ service.short }}</p>
-          <div class="service-tags">
-            {% for tag in service.tags limit:3 %}<span class="service-tag">{{ tag }}</span>{% endfor %}
-          </div>
-          <span class="project-link">Learn more &rarr;</span>
-        </a>
-        {% endfor %}
-      </div>
-    </div>
-  </section>
-
-  <section class="section outer alt" id="recommendations">
-    <div class="inner wide">
-      <div class="section-head">
-        <h2 class="section-title">What colleagues say</h2>
-        <a class="section-link" href="{{ '/recommendations/' | relative_url }}">All recommendations &rarr;</a>
-      </div>
-      {% include recommendations.html featured_only=true limit=3 %}
     </div>
   </section>
 </main>

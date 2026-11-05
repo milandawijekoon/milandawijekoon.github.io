@@ -1,4 +1,28 @@
 (() => {
+  // Scroll reveal for cards: only when motion is allowed and IntersectionObserver exists
+  if (!("IntersectionObserver" in window)) return;
+  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+  const targets = Array.from(document.querySelectorAll(".project-card, .mini-card, .rec-card, .service-card, .badge-card, .lab-item, .cta-card"))
+    .filter((el) => el.getBoundingClientRect().top > window.innerHeight);
+  if (!targets.length) return;
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (!entry.isIntersecting) return;
+      const el = entry.target;
+      io.unobserve(el);
+      el.classList.add("is-visible");
+      // Drop the helper classes afterwards so hover transitions work normally
+      setTimeout(() => { el.classList.remove("reveal", "is-visible"); el.style.transitionDelay = ""; }, 700);
+    });
+  }, { rootMargin: "0px 0px -8% 0px", threshold: 0.05 });
+  targets.forEach((el, i) => {
+    el.style.transitionDelay = (i % 3) * 80 + "ms";
+    el.classList.add("reveal");
+    io.observe(el);
+  });
+})();
+
+(() => {
   // Recommendations: clamp long quotes and reveal a "Read more" toggle only when needed
   document.querySelectorAll(".rec-card").forEach((card) => {
     const text = card.querySelector(".rec-text");
