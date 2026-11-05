@@ -1347,3 +1347,31 @@ main:has(.inner.wide) .page-hero .inner{max-width:1040px;}
 /* Core stack: smaller pills */
 .article-body .toolkit{gap:8px;}
 .article-body .toolkit .stack-tag{font-size:1.3rem;padding:4px 12px;}
+
+/* Hero palette: wine with gold accent */
+:root{--hero-from:#2a0d17;--hero-via:#4a1426;--hero-to:#6a1d36;--hero-glow:rgba(232,200,114,.20);--hero-accent:#e8c872;}
+.hero .btn-primary{color:#2a0d17;}
+.hero .stack-tag:hover{border-color:rgba(232,200,114,.55);}
+.hero-photo{border-color:rgba(232,200,114,.4);box-shadow:0 0 0 8px rgba(232,200,114,.08),0 30px 60px -20px rgba(0,0,0,.6);}
+
+/* Hero palette: obsidian violet with lavender accent */
+:root{--hero-from:#120f1f;--hero-via:#241c3d;--hero-to:#3b2d63;--hero-glow:rgba(196,181,253,.22);--hero-accent:#c4b5fd;}
+.hero .btn-primary{color:#120f1f;}
+.hero .stack-tag:hover{border-color:rgba(196,181,253,.55);}
+.hero-photo{border-color:rgba(196,181,253,.35);box-shadow:0 0 0 8px rgba(196,181,253,.08),0 30px 60px -20px rgba(0,0,0,.6);}
+
+/* Hero palette: violet shifted toward indigo-blue */
+:root{--hero-from:#0f1029;--hero-via:#1f2462;--hero-to:#343b94;--hero-glow:rgba(165,180,252,.24);--hero-accent:#a5b4fc;}
+.hero .btn-primary,.page-hero .btn-primary{color:#0f1029;}
+.hero .stack-tag:hover{border-color:rgba(165,180,252,.55);}
+.hero-photo{border-color:rgba(165,180,252,.35);box-shadow:0 0 0 8px rgba(165,180,252,.08),0 30px 60px -20px rgba(0,0,0,.6);}
+
+/* Hero palette: violet with just a hint of blue */
+:root{--hero-from:#110f22;--hero-via:#221e48;--hero-to:#393172;--hero-glow:rgba(187,181,253,.23);--hero-accent:#bbb5fd;}
+.hero .btn-primary,.page-hero .btn-primary{color:#110f22;}
+.hero .stack-tag:hover{border-color:rgba(187,181,253,.55);}
+.hero-photo{border-color:rgba(187,181,253,.35);box-shadow:0 0 0 8px rgba(187,181,253,.08),0 30px 60px -20px rgba(0,0,0,.6);}
+
+/* Hero palette: a little darker */
+:root{--hero-from:#0b0a17;--hero-via:#171433;--hero-to:#292352;--hero-glow:rgba(187,181,253,.18);}
+.hero .btn-primary,.page-hero .btn-primary{color:#0b0a17;}
