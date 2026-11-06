@@ -66,6 +66,17 @@ I care about systems that are predictable, well-instrumented, and easy for the n
       <span class="badge-verify">Verify badge &rarr;</span>
     </span>
   </a>
+  <a class="badge-card" href="https://academy.claude.com/verify/a09b466c1e7a8bbbdf506ec2925abbfc" target="_blank" rel="noopener">
+    <picture>
+      <source type="image/webp" srcset="{{ '/assets/images/badge-claude-code-in-action-440.webp' | relative_url }} 440w, {{ '/assets/images/badge-claude-code-in-action-880.webp' | relative_url }} 880w" sizes="(max-width:767px) 45vw, 220px">
+      <img src="{{ '/assets/images/badge-claude-code-in-action-440.jpg' | relative_url }}" srcset="{{ '/assets/images/badge-claude-code-in-action-440.jpg' | relative_url }} 440w, {{ '/assets/images/badge-claude-code-in-action-880.jpg' | relative_url }} 880w" sizes="(max-width:767px) 45vw, 220px" alt="Claude Code in action course completion badge from Claude Academy" class="badge-image" width="440" height="300" loading="lazy" decoding="async">
+    </picture>
+    <span class="badge-meta">
+      <span class="badge-title">Claude Code in action</span>
+      <span class="badge-issuer">Claude Academy &middot; November 2026</span>
+      <span class="badge-verify">Verify badge &rarr;</span>
+    </span>
+  </a>
   <a class="badge-card" href="https://www.hackerrank.com/profile/milanda_wijekoon" target="_blank" rel="noopener">
     <span class="badge-placeholder badge-logo">
       <img src="{{ '/assets/images/hackerrank.svg' | relative_url }}" alt="HackerRank" width="722" height="77" loading="lazy" decoding="async">
